@@ -1836,6 +1836,23 @@
             answerSection.style.display = 'block';
         }
 
+        // Tab switching functionality
+        function switchTab(tabName) {
+            // Remove active class from all tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.page-content').forEach(page => page.style.display = 'none');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+            
+            // Show corresponding page
+            const pageId = tabName === 'qa' ? 'qa-page' : 
+                          tabName === 'videos' ? 'videos-page' : 
+                          tabName === 'ingredients' ? 'ingredients-page' : 'qa-page';
+            
+            document.getElementById(pageId).style.display = 'block';
+        }
+
         // Initialize the app
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize demo content first
@@ -1849,6 +1866,11 @@
             
             // Load demo videos immediately 
             advisor.loadVideos();
+            
+            // Set initial page visibility
+            document.getElementById('qa-page').style.display = 'block';
+            document.getElementById('videos-page').style.display = 'none';
+            document.getElementById('ingredients-page').style.display = 'none';
         });
     </script>
 </body>

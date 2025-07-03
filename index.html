@@ -1135,7 +1135,7 @@
                     // Store mock videos globally
                     window.currentVideos = mockVideos;
 
-                    this.showMessage('success', `Successfully synced ${mockVideos.length} videos with AI-powered summaries`);
+                    this.showMessage('success', `Successfully synced ${mockVideos.length} additional videos with AI-powered summaries`);
                     await this.loadVideos();
 
                 } catch (error) {
@@ -1775,11 +1775,80 @@
             `).join('');
         }
 
+        // Initialize demo content
+        function initializeDemoContent() {
+            // Pre-populate with demo videos for immediate showcase
+            const demoVideos = [
+                {
+                    video_id: 'keto123',
+                    title: 'The Complete Guide to Ketogenic Diet Success',
+                    description: 'Learn the science-backed approach to ketosis and metabolic flexibility.',
+                    published_at: '2024-06-15T10:00:00Z',
+                    duration: 'PT15M30S',
+                    view_count: 125000,
+                    like_count: 8500,
+                    summary: 'This comprehensive guide covers the fundamental principles of ketogenic nutrition, including macronutrient ratios, common mistakes, and practical implementation strategies for sustainable results.',
+                    stored_tokens: 12
+                },
+                {
+                    video_id: 'vitamin456',
+                    title: 'Essential Vitamins You Need Daily',
+                    description: 'Discover which vitamins are crucial for optimal health and how to get them.',
+                    published_at: '2024-06-10T14:30:00Z',
+                    duration: 'PT12M45S',
+                    view_count: 89000,
+                    like_count: 6200,
+                    summary: 'An in-depth analysis of essential vitamins including D3, B-complex, magnesium, and omega-3 fatty acids. Covers deficiency symptoms, food sources, and supplementation guidelines.',
+                    stored_tokens: 8
+                },
+                {
+                    video_id: 'fasting789',
+                    title: 'Intermittent Fasting: Science and Practice',
+                    description: 'The complete guide to intermittent fasting protocols and their health benefits.',
+                    published_at: '2024-06-05T09:15:00Z',
+                    duration: 'PT18M20S',
+                    view_count: 156000,
+                    like_count: 11200,
+                    summary: 'Explores various intermittent fasting protocols including 16:8, OMAD, and extended fasting. Discusses autophagy, insulin sensitivity, and practical implementation tips.',
+                    stored_tokens: 15
+                }
+            ];
+
+            // Set demo videos globally
+            window.currentVideos = demoVideos;
+            
+            // Show sample Q&A immediately
+            showSampleQA();
+        }
+
+        function showSampleQA() {
+            const answerSection = document.getElementById('answerSection');
+            const answerText = document.getElementById('answerText');
+            const questionInput = document.getElementById('questionInput');
+            
+            // Set sample question
+            questionInput.value = "What are the benefits of intermittent fasting?";
+            
+            // Show sample answer
+            const sampleAnswer = `Intermittent fasting can offer numerous health benefits when done properly:<br><br>• <strong>Improved insulin sensitivity</strong> - Helps your body use glucose more effectively<br>• <strong>Autophagy activation</strong> - Cellular cleanup and repair processes<br>• <strong>Weight management</strong> - Natural calorie restriction and metabolic benefits<br>• <strong>Mental clarity</strong> - Many people report improved focus during fasting periods<br>• <strong>Simplified eating schedule</strong> - Reduces decision fatigue around meals<br><br>Start with 16:8 (16 hours fasting, 8 hours eating) and listen to your body. Stay hydrated during fasting periods and break fasts with nutrient-dense foods.<br><br><em>💡 Try asking your own question above to see personalized responses!</em>`;
+            
+            answerText.innerHTML = sampleAnswer;
+            answerSection.style.display = 'block';
+        }
+
         // Initialize the app
         document.addEventListener('DOMContentLoaded', () => {
-            new NutritionAdvisor();
+            // Initialize demo content first
+            initializeDemoContent();
+            
+            // Start the nutrition advisor
+            const advisor = new NutritionAdvisor();
+            
             // Load default ingredient content
             loadIngredientContent('good');
+            
+            // Load demo videos immediately 
+            advisor.loadVideos();
         });
     </script>
 </body>

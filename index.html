@@ -663,6 +663,12 @@
     </style>
 </head>
 <body>
+    <!-- Demo Banner -->
+    <div style="background: linear-gradient(135deg, #3b82f6, #8b5cf6); color: white; text-align: center; padding: 12px; font-weight: 500; font-size: 14px; position: relative; z-index: 1000;">
+        🚀 <strong>DEMO VERSION</strong> - This is a fully functional demo using mock data. Try the Q&A and video sync features! 
+        <span style="opacity: 0.8; margin-left: 10px;">All responses are AI-generated for demonstration purposes.</span>
+    </div>
+    
     <div class="hero-header">
         <div class="container">
             <div class="hero-content">
@@ -826,31 +832,35 @@
 
             async loadChannelInfo() {
                 try {
-                    const response = await fetch('/api/channel');
-                    const channelInfo = await response.json();
+                    // Mock channel info for demo
+                    const channelInfo = {
+                        title: 'AI Nutrition Expert (Demo)',
+                        thumbnail: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=150&h=150&fit=crop&crop=face',
+                        videoCount: 2847,
+                        subscriberCount: 3200000,
+                        viewCount: 892000000,
+                        description: 'Providing evidence-based nutrition information, practical health tips, and scientific insights to help you achieve optimal wellness through proper nutrition and lifestyle choices.'
+                    };
                     
-                    if (response.ok) {
-                        document.getElementById('channelTitle').textContent = channelInfo.title;
-                        document.getElementById('channelAvatar').src = channelInfo.thumbnail;
-                        document.getElementById('channelVideoCount').textContent = this.formatNumber(channelInfo.videoCount);
-                        document.getElementById('channelSubCount').textContent = this.formatNumber(channelInfo.subscriberCount);
-                        document.getElementById('channelViewCount').textContent = this.formatNumber(channelInfo.viewCount);
-                        
-                        // Set Dr. Berg's avatar in answer section
-                        const answerAvatar = document.getElementById('drBergAnswerAvatar');
-                        if (answerAvatar) {
-                            answerAvatar.src = channelInfo.thumbnail;
-                            console.log('✅ Dr. Berg avatar set for answers:', channelInfo.thumbnail);
-                        } else {
-                            console.log('❌ Answer avatar element not found');
-                        }
-                        
-                        const description = channelInfo.description;
-                        const shortDescription = description.length > 150 ? description.substring(0, 150) + '...' : description;
-                        document.getElementById('channelDescription').textContent = shortDescription;
-                        
-                        document.getElementById('channelCard').style.display = 'flex';
+                    document.getElementById('channelTitle').textContent = channelInfo.title;
+                    document.getElementById('channelAvatar').src = channelInfo.thumbnail;
+                    document.getElementById('channelVideoCount').textContent = this.formatNumber(channelInfo.videoCount);
+                    document.getElementById('channelSubCount').textContent = this.formatNumber(channelInfo.subscriberCount);
+                    document.getElementById('channelViewCount').textContent = this.formatNumber(channelInfo.viewCount);
+                    
+                    // Set avatar in answer section
+                    const answerAvatar = document.getElementById('drBergAnswerAvatar');
+                    if (answerAvatar) {
+                        answerAvatar.src = channelInfo.thumbnail;
+                        console.log('✅ Avatar set for answers:', channelInfo.thumbnail);
                     }
+                    
+                    const description = channelInfo.description;
+                    const shortDescription = description.length > 150 ? description.substring(0, 150) + '...' : description;
+                    document.getElementById('channelDescription').textContent = shortDescription;
+                    
+                    document.getElementById('channelCard').style.display = 'flex';
+                    
                 } catch (error) {
                     console.error('Error loading channel info:', error);
                 }
@@ -868,8 +878,8 @@
 
             async loadVideos() {
                 try {
-                    const response = await fetch('/api/videos');
-                    const videos = await response.json();
+                    // Mock video data for demo
+                    const videos = window.currentVideos || [];
                     
                     const videosGrid = document.getElementById('videosGrid');
                     
@@ -889,9 +899,6 @@
                             </div>
                         </div>
                     `).join('');
-                    
-                    // Store videos globally
-                    window.currentVideos = videos;
                     
                 } catch (error) {
                     console.error('Error loading videos:', error);
@@ -918,27 +925,15 @@
                 answerSection.style.display = 'none';
                 messageArea.innerHTML = '';
 
+                // Simulate processing delay
+                await new Promise(resolve => setTimeout(resolve, 1500));
+
                 try {
-                    const response = await fetch('/api/ask', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ question })
-                    });
-
-                    const data = await response.json();
-
-                    if (!response.ok) {
-                        throw new Error(data.error || 'Failed to get answer');
-                    }
-
-                    // Just display the answer content (the header already has Dr. Berg's photo and title)
-                    answerText.innerHTML = data.answer.replace(/\n/g, '<br>');
+                    // Mock AI responses based on question keywords
+                    const mockAnswer = this.generateMockAnswer(question);
                     
-                    // Remove the related videos section completely
+                    answerText.innerHTML = mockAnswer.replace(/\n/g, '<br>');
                     relevantVideos.innerHTML = '';
-
                     answerSection.style.display = 'block';
 
                 } catch (error) {
@@ -950,6 +945,24 @@
                 }
             }
 
+            generateMockAnswer(question) {
+                const q = question.toLowerCase();
+                
+                if (q.includes('keto') || q.includes('ketogenic')) {
+                    return "Based on extensive nutrition research, the ketogenic diet can be highly effective for weight loss and metabolic health. Key principles include:\n\n• Keep carbs under 20-50g daily\n• Focus on healthy fats (70-80% of calories)\n• Moderate protein intake (15-25%)\n• Stay hydrated and replenish electrolytes\n\nImportant: Always consult with a healthcare provider before starting any new diet, especially if you have medical conditions.";
+                } else if (q.includes('vitamin') || q.includes('supplement')) {
+                    return "Vitamin supplementation should be based on individual needs and deficiencies. Common considerations:\n\n• Vitamin D3: Essential for most people, especially in winter\n• B-Complex: Important for energy and nervous system\n• Magnesium: Often deficient, crucial for 300+ enzymatic reactions\n• Omega-3: Anti-inflammatory, supports brain and heart health\n\nBest approach: Get blood work done to identify specific deficiencies, then supplement accordingly with high-quality products.";
+                } else if (q.includes('weight') || q.includes('lose') || q.includes('fat')) {
+                    return "Sustainable weight loss focuses on metabolic health rather than just calories:\n\n• Prioritize whole, unprocessed foods\n• Combine intermittent fasting with proper nutrition\n• Include strength training to preserve muscle mass\n• Manage stress and get quality sleep\n• Stay consistent with small, sustainable changes\n\nRemember: Rapid weight loss often leads to muscle loss and metabolic slowdown. Aim for 1-2 pounds per week for lasting results.";
+                } else if (q.includes('sugar') || q.includes('carb') || q.includes('diabetes')) {
+                    return "Managing blood sugar is crucial for overall health:\n\n• Avoid refined sugars and processed carbohydrates\n• Choose complex carbs with fiber when eating carbs\n• Combine carbs with protein and healthy fats\n• Consider intermittent fasting to improve insulin sensitivity\n• Regular exercise helps with glucose uptake\n\nFor diabetics: Work closely with your healthcare team to monitor blood sugar and adjust medications as needed.";
+                } else if (q.includes('intermittent') || q.includes('fasting')) {
+                    return "Intermittent fasting can offer numerous health benefits when done properly:\n\n• Start with 16:8 (16 hours fasting, 8 hours eating)\n• Stay hydrated during fasting periods\n• Break fasts with nutrient-dense foods\n• Listen to your body and adjust as needed\n• Benefits may include improved insulin sensitivity, autophagy, and mental clarity\n\nNote: Pregnant women, children, and those with eating disorders should avoid fasting.";
+                } else {
+                    return `Great question about "${question}"! Based on nutritional science principles:\n\n• Focus on whole, unprocessed foods as your foundation\n• Maintain proper hydration throughout the day\n• Include a variety of micronutrients from diverse food sources\n• Consider your individual metabolic needs and health goals\n• Consistency with healthy habits trumps perfection\n\nThis is a demo response. For personalized nutrition advice, please consult with a qualified healthcare professional or registered dietitian.`;
+                }
+            }
+
             async syncVideos() {
                 const button = document.getElementById('syncVideosBtn');
                 const messageArea = document.getElementById('messageArea');
@@ -958,18 +971,73 @@
                 button.innerHTML = '<span class="loading"></span>Syncing...';
                 messageArea.innerHTML = '';
 
+                // Simulate sync delay
+                await new Promise(resolve => setTimeout(resolve, 2000));
+
                 try {
-                    const response = await fetch('/api/sync-videos', {
-                        method: 'POST'
-                    });
+                    // Mock video data
+                    const mockVideos = [
+                        {
+                            video_id: 'keto123',
+                            title: 'The Complete Guide to Ketogenic Diet Success',
+                            description: 'Learn the science-backed approach to ketosis and metabolic flexibility.',
+                            published_at: '2024-06-15T10:00:00Z',
+                            duration: 'PT15M30S',
+                            view_count: 125000,
+                            like_count: 8500,
+                            summary: 'This comprehensive guide covers the fundamental principles of ketogenic nutrition, including macronutrient ratios, common mistakes, and practical implementation strategies for sustainable results.',
+                            stored_tokens: 12
+                        },
+                        {
+                            video_id: 'vitamin456',
+                            title: 'Essential Vitamins You Need Daily',
+                            description: 'Discover which vitamins are crucial for optimal health and how to get them.',
+                            published_at: '2024-06-10T14:30:00Z',
+                            duration: 'PT12M45S',
+                            view_count: 89000,
+                            like_count: 6200,
+                            summary: 'An in-depth analysis of essential vitamins including D3, B-complex, magnesium, and omega-3 fatty acids. Covers deficiency symptoms, food sources, and supplementation guidelines.',
+                            stored_tokens: 8
+                        },
+                        {
+                            video_id: 'fasting789',
+                            title: 'Intermittent Fasting: Science and Practice',
+                            description: 'The complete guide to intermittent fasting protocols and their health benefits.',
+                            published_at: '2024-06-05T09:15:00Z',
+                            duration: 'PT18M20S',
+                            view_count: 156000,
+                            like_count: 11200,
+                            summary: 'Explores various intermittent fasting protocols including 16:8, OMAD, and extended fasting. Discusses autophagy, insulin sensitivity, and practical implementation tips.',
+                            stored_tokens: 15
+                        },
+                        {
+                            video_id: 'sugar999',
+                            title: 'Hidden Sugars Destroying Your Health',
+                            description: 'Learn to identify and avoid hidden sugars in processed foods.',
+                            published_at: '2024-05-28T16:45:00Z',
+                            duration: 'PT10M15S',
+                            view_count: 203000,
+                            like_count: 14800,
+                            summary: 'Reveals the hidden sources of sugar in common foods and their impact on metabolism, insulin resistance, and inflammation. Provides practical strategies for reducing sugar intake.',
+                            stored_tokens: 6
+                        },
+                        {
+                            video_id: 'electro111',
+                            title: 'Electrolyte Balance for Optimal Health',
+                            description: 'Understanding sodium, potassium, and magnesium for peak performance.',
+                            published_at: '2024-05-20T11:30:00Z',
+                            duration: 'PT14M50S',
+                            view_count: 78000,
+                            like_count: 5400,
+                            summary: 'Comprehensive guide to electrolyte balance, covering the roles of sodium, potassium, magnesium, and calcium in cellular function, hydration, and energy production.',
+                            stored_tokens: 10
+                        }
+                    ];
 
-                    const data = await response.json();
+                    // Store mock videos globally
+                    window.currentVideos = mockVideos;
 
-                    if (!response.ok) {
-                        throw new Error(data.error || 'Failed to sync videos');
-                    }
-
-                    this.showMessage('success', `Successfully synced ${data.processedCount} videos with improved summaries`);
+                    this.showMessage('success', `Successfully synced ${mockVideos.length} videos with AI-powered summaries`);
                     await this.loadVideos();
 
                 } catch (error) {
@@ -1029,13 +1097,8 @@
             if (!video) return;
 
             try {
-                const response = await fetch(`/api/videos/${videoId}/detail`);
+                // Use mock detailed summary
                 let detailedSummary = video.summary;
-                
-                if (response.ok) {
-                    const detailData = await response.json();
-                    detailedSummary = detailData.detailedSummary || video.summary;
-                }
 
                 document.getElementById('modalTitle').textContent = video.title;
                 document.getElementById('modalMeta').innerHTML = `

@@ -660,6 +660,104 @@
                 flex-direction: column;
             }
         }
+
+        /* Ingredient Guide Styles */
+        .ingredient-categories {
+            display: flex;
+            gap: 12px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 12px 24px;
+            border: 2px solid var(--neutral-200);
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .category-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .ingredient-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .ingredient-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .ingredient-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .ingredient-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--neutral-800);
+            margin-bottom: 12px;
+        }
+
+        .ingredient-description {
+            color: var(--neutral-600);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .ingredient-dosage {
+            background: var(--neutral-50);
+            color: var(--neutral-700);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+
+        .ingredient-benefits {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .benefit-tag {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .benefit-tag.benefit {
+            background: var(--mint);
+            color: var(--sage-green);
+        }
+
+        .benefit-tag.problem {
+            background: var(--peach);
+            color: #dc2626;
+        }
     </style>
 </head>
 <body>
@@ -1519,9 +1617,169 @@
             }
         }
 
+        // Ingredient/Food Guide Functions
+        function switchIngredientCategory(category) {
+            // Update active button
+            document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Load content for category
+            loadIngredientContent(category);
+        }
+
+        function loadIngredientContent(category) {
+            const grid = document.getElementById('ingredientsGrid');
+            
+            const content = {
+                good: [
+                    {
+                        title: 'Leafy Greens',
+                        icon: '🥬',
+                        description: 'Spinach, kale, arugula - packed with vitamins K, A, C and folate',
+                        benefits: ['High in antioxidants', 'Supports liver detox', 'Rich in minerals']
+                    },
+                    {
+                        title: 'Cruciferous Vegetables',
+                        icon: '🥦',
+                        description: 'Broccoli, cauliflower, brussels sprouts - cancer-fighting compounds',
+                        benefits: ['Supports thyroid health', 'Natural detoxification', 'Anti-inflammatory']
+                    },
+                    {
+                        title: 'Avocados',
+                        icon: '🥑',
+                        description: 'Healthy monounsaturated fats and potassium',
+                        benefits: ['Heart healthy fats', 'High in potassium', 'Supports ketosis']
+                    },
+                    {
+                        title: 'Wild-Caught Fish',
+                        icon: '🐟',
+                        description: 'Salmon, sardines, mackerel - omega-3 fatty acids',
+                        benefits: ['Anti-inflammatory', 'Brain health', 'Heart protection']
+                    },
+                    {
+                        title: 'Grass-Fed Beef',
+                        icon: '🥩',
+                        description: 'High-quality protein with better omega-3 profile',
+                        benefits: ['Complete protein', 'B-vitamins', 'Iron and zinc']
+                    },
+                    {
+                        title: 'Nuts and Seeds',
+                        icon: '🌰',
+                        description: 'Almonds, walnuts, chia seeds - healthy fats and minerals',
+                        benefits: ['Healthy fats', 'Magnesium', 'Vitamin E']
+                    }
+                ],
+                bad: [
+                    {
+                        title: 'Refined Sugar',
+                        icon: '🍬',
+                        description: 'White sugar, high fructose corn syrup, artificial sweeteners',
+                        problems: ['Spikes insulin', 'Feeds inflammation', 'Addictive properties']
+                    },
+                    {
+                        title: 'Processed Grains',
+                        icon: '🍞',
+                        description: 'White bread, pasta, cereals - stripped of nutrients',
+                        problems: ['Blood sugar spikes', 'Nutrient deficient', 'Inflammatory']
+                    },
+                    {
+                        title: 'Vegetable Oils',
+                        icon: '🛢️',
+                        description: 'Soybean, corn, canola oil - high in omega-6',
+                        problems: ['Pro-inflammatory', 'Processed with chemicals', 'Unstable when heated']
+                    },
+                    {
+                        title: 'Processed Meats',
+                        icon: '🌭',
+                        description: 'Hot dogs, deli meats, bacon with nitrates',
+                        problems: ['Nitrates/nitrites', 'High sodium', 'Poor quality ingredients']
+                    },
+                    {
+                        title: 'Trans Fats',
+                        icon: '🧈',
+                        description: 'Margarine, shortening, fried foods',
+                        problems: ['Increases inflammation', 'Damages cell membranes', 'Heart disease risk']
+                    },
+                    {
+                        title: 'Artificial Additives',
+                        icon: '🧪',
+                        description: 'MSG, artificial colors, preservatives',
+                        problems: ['Neurological effects', 'Allergic reactions', 'Unknown long-term effects']
+                    }
+                ],
+                vitamins: [
+                    {
+                        title: 'Vitamin D3',
+                        icon: '☀️',
+                        description: 'Essential for immune function and bone health',
+                        dosage: '5,000-10,000 IU daily',
+                        benefits: ['Immune support', 'Bone health', 'Mood regulation']
+                    },
+                    {
+                        title: 'B-Complex',
+                        icon: '💊',
+                        description: 'Energy production and nervous system support',
+                        dosage: 'High-quality B-complex daily',
+                        benefits: ['Energy production', 'Nervous system', 'Red blood cell formation']
+                    },
+                    {
+                        title: 'Magnesium',
+                        icon: '⚡',
+                        description: 'Involved in 300+ enzymatic reactions',
+                        dosage: '400-600mg daily',
+                        benefits: ['Muscle function', 'Heart health', 'Sleep quality']
+                    },
+                    {
+                        title: 'Omega-3',
+                        icon: '🐟',
+                        description: 'Anti-inflammatory essential fatty acids',
+                        dosage: '1-2g EPA/DHA daily',
+                        benefits: ['Brain health', 'Heart protection', 'Anti-inflammatory']
+                    },
+                    {
+                        title: 'Vitamin K2',
+                        icon: '🦴',
+                        description: 'Directs calcium to bones, away from arteries',
+                        dosage: '100-200mcg daily',
+                        benefits: ['Bone health', 'Heart health', 'Works with D3']
+                    },
+                    {
+                        title: 'Zinc',
+                        icon: '🛡️',
+                        description: 'Immune function and wound healing',
+                        dosage: '15-30mg daily',
+                        benefits: ['Immune support', 'Wound healing', 'Taste and smell']
+                    }
+                ]
+            };
+
+            const items = content[category] || [];
+            
+            if (items.length === 0) {
+                grid.innerHTML = '<p style="text-align: center; color: var(--neutral-600);">Content coming soon...</p>';
+                return;
+            }
+
+            grid.innerHTML = items.map(item => `
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">${item.icon}</div>
+                    <h3 class="ingredient-title">${item.title}</h3>
+                    <p class="ingredient-description">${item.description}</p>
+                    ${item.dosage ? `<div class="ingredient-dosage"><strong>Suggested:</strong> ${item.dosage}</div>` : ''}
+                    <div class="ingredient-benefits">
+                        ${(item.benefits || item.problems || []).map(benefit => 
+                            `<span class="benefit-tag ${item.problems ? 'problem' : 'benefit'}">${benefit}</span>`
+                        ).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
         // Initialize the app
         document.addEventListener('DOMContentLoaded', () => {
             new NutritionAdvisor();
+            // Load default ingredient content
+            loadIngredientContent('good');
         });
     </script>
 </body>

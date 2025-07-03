@@ -1,0 +1,11 @@
+{
+  "videoId": "Hx5vxhx6fsU",
+  "chunkIndex": 1,
+  "text": "#keto #ketodiet #weightloss #ketolifestyle #intermittentfasting #lowcarb Thanks for watching! I hope you’ll try this easy DIY anti-aging face mask for its amazing benefits. I’ll see you in the next video.",
+  "wordCount": 30,
+  "metadata": {
+    "title": "Why Is No One Talking About This?!",
+    "publishedAt": "2025-06-15T10:00:23Z",
+    "contentSource": "metadata"
+  }
+}

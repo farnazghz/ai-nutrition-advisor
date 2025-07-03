@@ -1,0 +1,26 @@
+{
+  "name": "bay-area-hiking-discovery",
+  "version": "1.0.0",
+  "description": "Tinder-style hiking discovery app for Bay Area trails",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "hiking",
+    "bay-area",
+    "discovery",
+    "trails",
+    "tinder",
+    "swipe",
+    "calendar",
+    "outdoor"
+  ],
+  "author": "Amir Takhmar",
+  "license": "MIT",
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

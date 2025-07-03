@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 Bay Area Discovery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2d5a27;
+            --primary-light: #4a7c59;
+            --secondary: #f8fdf8;
+            --accent: #8bc34a;
+            --text-primary: #2c3e50;
+            --text-secondary: #7f8c8d;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            color: var(--text-primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 15px;
+            padding: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .tab {
+            padding: 12px 24px;
+            background: transparent;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 0 5px;
+        }
+
+        .tab.active {
+            background: var(--gradient);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Preferences Panel */
+        .preferences-panel {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .pref-group {
+            margin-bottom: 25px;
+        }
+
+        .pref-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .pref-group select,
+        .pref-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .pref-group select:focus,
+        .pref-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .checkbox-item:hover {
+            background: #e9ecef;
+        }
+
+        .checkbox-item input {
+            margin-right: 8px;
+            width: auto;
+        }
+
+        /* Swipe Card Styles */
+        .swipe-container {
+            position: relative;
+            max-width: 400px;
+            height: 600px;
+            margin: 0 auto;
+            perspective: 1000px;
+        }
+
+        .hike-card {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            cursor: grab;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .hike-card:active {
+            cursor: grabbing;
+        }
+
+        .hike-card.swiping {
+            transition: none;
+            z-index: 100;
+        }
+
+        .hike-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .hike-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--text-primary);
+        }
+
+        .hike-location {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        .hike-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .hike-description {
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stars {
+            color: #ffc107;
+        }
+
+        .swipe-indicators {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .swipe-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .swipe-btn.reject {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .swipe-btn.like {
+            background: #51cf66;
+            color: white;
+        }
+
+        .swipe-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Calendar Styles */
+        .calendar-container {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            border: 2px dashed #e9ecef;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.3s ease;
+            min-height: 50px;
+        }
+
+        .calendar-day:hover {
+            border-color: var(--primary);
+            background: #f8f9fa;
+        }
+
+        .calendar-day.has-event {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .calendar-day.has-event:hover {
+            background: var(--primary-light);
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .liked-hikes {
+            margin-top: 30px;
+        }
+
+        .liked-hike-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            cursor: grab;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .liked-hike-item:hover {
+            background: #e9ecef;
+            transform: translateY(-2px);
+        }
+
+        .liked-hike-item.dragging {
+            opacity: 0.5;
+            transform: rotate(5deg);
+        }
+
+        .social-proof {
+            margin-top: 15px;
+        }
+
+        .youtube-videos,
+        .reddit-posts {
+            margin-bottom: 10px;
+        }
+
+        .social-item {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 5px;
+        }
+
+        /* Dating App Style Enhancements */
+        .image-gallery {
+            position: relative;
+            width: 100%;
+            height: 250px;
+        }
+
+        .main-image {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .photo-counter {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .image-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 5px;
+        }
+
+        .info-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .info-btn:hover {
+            background: var(--primary-light);
+            transform: scale(1.1);
+        }
+
+        .action-links {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .link-btn {
+            flex: 1;
+            padding: 8px 12px;
+            background: rgba(45, 90, 39, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            color: var(--primary);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .link-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .drop-zone {
+            border: 2px dashed transparent;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            min-height: 100px;
+        }
+
+        .drop-zone.drag-over {
+            border-color: var(--accent);
+            background: rgba(139, 195, 74, 0.1);
+        }
+
+        .drop-zone-hint {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 10px;
+            padding: 8px;
+            background: rgba(139, 195, 74, 0.05);
+            border-radius: 8px;
+        }
+
+        .no-more-cards {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-secondary);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .update-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .update-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .activity-card {
+            background: white;
+            border: 3px solid #e9ecef;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .activity-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .activity-card.selected {
+            border-color: var(--primary);
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .activity-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .activity-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .activity-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .reset-tab {
+            background: #ff6b6b !important;
+            color: white !important;
+        }
+
+        .reset-tab:hover {
+            background: #ff5252 !important;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .swipe-container {
+                height: 500px;
+            }
+            
+            .tabs {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Bay Area Discovery</h1>
+            <p>Swipe to discover your perfect adventure</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('activity-type')">🎯 Activity Type</button>
+            <button class="tab" onclick="showTab('preferences')">⚙️ Preferences</button>
+            <button class="tab" onclick="showTab('discover')">🔍 Discover</button>
+            <button class="tab" onclick="showTab('calendar')">📅 Plan</button>
+            <button class="tab reset-tab" onclick="resetProfile()">🔄 Reset</button>
+        </div>
+
+        <!-- Activity Type Tab -->
+        <div id="activity-type" class="tab-content active">
+            <div class="preferences-panel">
+                <h2>🎯 Choose Your Activity Type</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 30px;">
+                    Select what type of experience you're looking for and we'll customize recommendations for you!
+                </p>
+                
+                <div class="activity-grid">
+                    <div class="activity-card" onclick="selectActivityType('hiking')" data-activity="hiking">
+                        <div class="activity-icon">🥾</div>
+                        <h3>Hiking</h3>
+                        <p>Trails, nature walks, and outdoor adventures</p>
+                    </div>
+                    
+                    <div class="activity-card" onclick="selectActivityType('camping')" data-activity="camping">
+                        <div class="activity-icon">🏕️</div>
+                        <h3>Camping</h3>
+                        <p>Campgrounds, RV sites, and outdoor stays</p>
+                    </div>
+                    
+                    <div class="activity-card" onclick="selectActivityType('date-night')" data-activity="date-night">
+                        <div class="activity-icon">💕</div>
+                        <h3>Date Night</h3>
+                        <p>Romantic restaurants, scenic spots, and couple activities</p>
+                    </div>
+                    
+                    <div class="activity-card" onclick="selectActivityType('entertainment')" data-activity="entertainment">
+                        <div class="activity-icon">🎭</div>
+                        <h3>Entertainment</h3>
+                        <p>Comedy shows, concerts, theatre, and live events</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preferences Tab -->
+        <div id="preferences" class="tab-content">
+            <div id="preferences-content" class="preferences-panel">
+                <!-- Dynamic content will be loaded here based on activity type -->
+                <div class="no-activity-selected">
+                    <h2>🎯 Select Activity Type First</h2>
+                    <p style="color: var(--text-secondary); text-align: center; padding: 20px;">
+                        Please go back to the Activity Type tab and select what type of experience you're looking for!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Discover Tab -->
+        <div id="discover" class="tab-content">
+            <div class="swipe-container" id="swipeContainer">
+                <div class="loading">Loading recommendations...</div>
+            </div>
+            
+            <div class="swipe-indicators">
+                <button class="swipe-btn reject" onclick="swipeLeft()">❌</button>
+                <button class="swipe-btn like" onclick="swipeRight()">💚</button>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px; color: var(--text-secondary);">
+                <p>💡 Swipe right on trails you like to add them to your calendar!</p>
+                <p>❤️ Liked: <span id="likedCount">0</span> trails</p>
+            </div>
+        </div>
+
+        <!-- Calendar Tab -->
+        <div id="calendar" class="tab-content">
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <h2>📅 Plan Your Hiking Adventures</h2>
+                    <div>
+                        <button onclick="prevMonth()" style="padding: 8px 12px; margin: 0 5px; border: none; border-radius: 5px; cursor: pointer;">‹</button>
+                        <span id="currentMonth" style="font-weight: bold;"></span>
+                        <button onclick="nextMonth()" style="padding: 8px 12px; margin: 0 5px; border: none; border-radius: 5px; cursor: pointer;">›</button>
+                    </div>
+                </div>
+                
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- Calendar days will be generated here -->
+                </div>
+
+                <div class="liked-hikes">
+                    <h3>❤️ Your Liked Hikes</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px;">Drag these onto calendar dates to schedule your adventures!</p>
+                    <div id="likedHikesList" class="drop-zone">
+                        <p style="color: var(--text-secondary); text-align: center; padding: 20px;">
+                            No liked hikes yet. Go to the Discover tab and swipe right on trails you want to hike! 🥾
+                        </p>
+                    </div>
+                    <div class="drop-zone-hint">
+                        💡 You can also drag calendar events back here to save for later!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Application State
+        let currentHike = null;
+        let swipedRight = JSON.parse(localStorage.getItem('swipedRight') || '[]');
+        let swipedLeft = JSON.parse(localStorage.getItem('swipedLeft') || '[]');
+        let currentDate = new Date();
+        let calendarEvents = JSON.parse(localStorage.getItem('calendarEvents') || '{}');
+        let selectedActivityType = localStorage.getItem('selectedActivityType') || '';
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCalendar();
+            updateLikedCount();
+            highlightSelectedActivity();
+            
+            // Load preferences content if activity is already selected
+            if (selectedActivityType) {
+                updatePreferencesContent(selectedActivityType);
+                updateAppForActivity(selectedActivityType);
+            }
+        });
+
+        // Activity Type Selection
+        function selectActivityType(activityType) {
+            selectedActivityType = activityType;
+            localStorage.setItem('selectedActivityType', activityType);
+            
+            // Update UI
+            highlightSelectedActivity();
+            
+            // Update app title and description based on activity
+            updateAppForActivity(activityType);
+            
+            // Move to preferences tab
+            setTimeout(() => {
+                showTab('preferences');
+            }, 500);
+        }
+
+        function highlightSelectedActivity() {
+            document.querySelectorAll('.activity-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            if (selectedActivityType) {
+                const selectedCard = document.querySelector(`[data-activity="${selectedActivityType}"]`);
+                if (selectedCard) {
+                    selectedCard.classList.add('selected');
+                }
+            }
+        }
+
+        function updateAppForActivity(activityType) {
+            const header = document.querySelector('.header');
+            const titles = {
+                'hiking': '🥾 Bay Area Discovery',
+                'camping': '🏕️ Bay Area Discovery', 
+                'date-night': '💕 Bay Area Discovery',
+                'entertainment': '🎭 Bay Area Discovery'
+            };
+            
+            const descriptions = {
+                'hiking': 'Swipe to discover your perfect trail adventure',
+                'camping': 'Swipe to discover your perfect camping spot',
+                'date-night': 'Swipe to discover your perfect romantic experience',
+                'entertainment': 'Swipe to discover your perfect entertainment experience'
+            };
+            
+            header.querySelector('h1').textContent = titles[activityType] || titles.hiking;
+            header.querySelector('p').textContent = descriptions[activityType] || descriptions.hiking;
+            
+            // Update preferences content
+            updatePreferencesContent(activityType);
+        }
+
+        function updatePreferencesContent(activityType) {
+            const preferencesContent = document.getElementById('preferences-content');
+            
+            const preferencesHTML = {
+                'hiking': `
+                    <h2>🥾 Set Your Hiking Preferences</h2>
+                    
+                    <div class="pref-group">
+                        <label for="difficulty">Difficulty Level</label>
+                        <select id="difficulty">
+                            <option value="any">Any Difficulty</option>
+                            <option value="easy">Easy</option>
+                            <option value="moderate" selected>Moderate</option>
+                            <option value="hard">Hard</option>
+                            <option value="very_hard">Very Hard</option>
+                        </select>
+                    </div>
+
+                    <div class="pref-group">
+                        <label for="distance">Distance Range (miles)</label>
+                        <select id="distance">
+                            <option value="0-3">0-3 miles</option>
+                            <option value="3-7">3-7 miles</option>
+                            <option value="5-10" selected>5-10 miles</option>
+                            <option value="10-15">10-15 miles</option>
+                            <option value="15-99">15+ miles</option>
+                        </select>
+                    </div>
+
+                    <div class="pref-group">
+                        <label>Preferred Scenery</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="scenery" value="water" checked> 🌊 Water Views
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="scenery" value="mountain" checked> ⛰️ Mountains
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="scenery" value="forest"> 🌲 Forest
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="scenery" value="ocean"> 🌊 Ocean
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="scenery" value="city"> 🏙️ City Views
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="scenery" value="beach"> 🏖️ Beach
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="pref-group">
+                        <label>Desired Features</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="parking" checked> 🅿️ Parking
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="restrooms" checked> 🚻 Restrooms
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="water_fountains"> 🚰 Water
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="dog_friendly"> 🐕 Dog Friendly
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="bike_friendly"> 🚴 Bike Friendly
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="visitor_center"> ℹ️ Visitor Center
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="update-btn" onclick="updatePreferences()">
+                        Update Preferences & Start Discovering
+                    </button>
+                `,
+                'camping': `
+                    <h2>🏕️ Set Your Camping Preferences</h2>
+                    
+                    <div class="pref-group">
+                        <label for="camp-type">Camping Type</label>
+                        <select id="camp-type">
+                            <option value="any">Any Type</option>
+                            <option value="tent" selected>Tent Camping</option>
+                            <option value="rv">RV Camping</option>
+                            <option value="cabin">Cabin Rental</option>
+                            <option value="glamping">Glamping</option>
+                        </select>
+                    </div>
+
+                    <div class="pref-group">
+                        <label for="camp-size">Group Size</label>
+                        <select id="camp-size">
+                            <option value="1-2" selected>1-2 people</option>
+                            <option value="3-6">3-6 people</option>
+                            <option value="7-12">7-12 people</option>
+                            <option value="13+">13+ people</option>
+                        </select>
+                    </div>
+
+                    <div class="pref-group">
+                        <label>Preferred Setting</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="scenery" value="forest" checked> 🌲 Forest
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="scenery" value="lake" checked> 🏞️ Lakeside
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="scenery" value="mountain"> ⛰️ Mountain
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="scenery" value="beach"> 🏖️ Beach
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="scenery" value="desert"> 🏜️ Desert
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="pref-group">
+                        <label>Required Amenities</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="restrooms" checked> 🚻 Restrooms
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="showers" checked> 🚿 Showers
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="fire_pits"> 🔥 Fire Pits
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="hookups"> ⚡ Electric Hookups
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="wifi"> 📶 WiFi
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="store"> 🏪 Camp Store
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="update-btn" onclick="updatePreferences()">
+                        Update Preferences & Start Discovering
+                    </button>
+                `,
+                'date-night': `
+                    <h2>💕 Set Your Date Night Preferences</h2>
+                    
+                    <div class="pref-group">
+                        <label for="date-type">Date Type</label>
+                        <select id="date-type">
+                            <option value="any">Any Type</option>
+                            <option value="dinner" selected>Dinner Date</option>
+                            <option value="activity">Activity Date</option>
+                            <option value="romantic">Romantic Spot</option>
+                            <option value="adventure">Adventure Date</option>
+                        </select>
+                    </div>
+
+                    <div class="pref-group">
+                        <label for="budget">Budget Range</label>
+                        <select id="budget">
+                            <option value="$">$ - Budget Friendly</option>
+                            <option value="$$" selected>$$ - Moderate</option>
+                            <option value="$$$">$$$ - Upscale</option>
+                            <option value="$$$$">$$$$ - Luxury</option>
+                        </select>
+                    </div>
+
+                    <div class="pref-group">
+                        <label>Atmosphere</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="scenery" value="romantic" checked> 💕 Romantic
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="scenery" value="intimate" checked> 🕯️ Intimate
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="scenery" value="scenic"> 🌅 Scenic Views
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="scenery" value="lively"> 🎉 Lively
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="scenery" value="quiet"> 🤫 Quiet
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="pref-group">
+                        <label>Cuisine/Activity Type</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="italian" checked> 🍝 Italian
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="asian"> 🍜 Asian
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="american"> 🍔 American
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="wine_bar"> 🍷 Wine Bar
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="outdoor"> 🌳 Outdoor Activity
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="cultural"> 🎨 Cultural
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="update-btn" onclick="updatePreferences()">
+                        Update Preferences & Start Discovering
+                    </button>
+                `,
+                'entertainment': `
+                    <h2>🎭 Set Your Entertainment Preferences</h2>
+                    
+                    <div class="pref-group">
+                        <label for="event-type">Event Type</label>
+                        <select id="event-type">
+                            <option value="any">Any Type</option>
+                            <option value="comedy" selected>Comedy Shows</option>
+                            <option value="concert">Concerts</option>
+                            <option value="theatre">Theatre</option>
+                            <option value="sports">Sports Events</option>
+                        </select>
+                    </div>
+
+                    <div class="pref-group">
+                        <label for="venue-size">Venue Size</label>
+                        <select id="venue-size">
+                            <option value="any">Any Size</option>
+                            <option value="intimate" selected>Intimate (< 500)</option>
+                            <option value="medium">Medium (500-2000)</option>
+                            <option value="large">Large (2000+)</option>
+                        </select>
+                    </div>
+
+                    <div class="pref-group">
+                        <label>Music/Comedy Genre</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="scenery" value="rock" checked> 🎸 Rock
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="scenery" value="comedy" checked> 😂 Stand-up Comedy
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="scenery" value="jazz"> 🎷 Jazz
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="scenery" value="classical"> 🎼 Classical
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="scenery" value="indie"> 🎤 Indie
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="pref-group">
+                        <label>Venue Features</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="parking" checked> 🅿️ Parking
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="bar" checked> 🍺 Full Bar
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="food"> 🍕 Food Available
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="accessible"> ♿ Wheelchair Accessible
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="features" value="outdoor"> 🌤️ Outdoor Venue
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="update-btn" onclick="updatePreferences()">
+                        Update Preferences & Start Discovering
+                    </button>
+                `
+            };
+            
+            if (activityType && preferencesHTML[activityType]) {
+                preferencesContent.innerHTML = preferencesHTML[activityType];
+            } else {
+                preferencesContent.innerHTML = `
+                    <div class="no-activity-selected">
+                        <h2>🎯 Select Activity Type First</h2>
+                        <p style="color: var(--text-secondary); text-align: center; padding: 20px;">
+                            Please go back to the Activity Type tab and select what type of experience you're looking for!
+                        </p>
+                    </div>
+                `;
+            }
+        }
+
+        // Tab Management
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+
+            // Load data for specific tabs
+            if (tabName === 'discover') {
+                loadRecommendations();
+            } else if (tabName === 'calendar') {
+                updateLikedHikesList();
+            }
+        }
+
+        // Preferences Management
+        function updatePreferences() {
+            // Get preferences based on activity type
+            let preferences = { activityType: selectedActivityType };
+            
+            if (selectedActivityType === 'hiking') {
+                preferences.difficulty = document.getElementById('difficulty')?.value;
+                preferences.distance = document.getElementById('distance')?.value;
+            } else if (selectedActivityType === 'camping') {
+                preferences.campType = document.getElementById('camp-type')?.value;
+                preferences.campSize = document.getElementById('camp-size')?.value;
+            } else if (selectedActivityType === 'date-night') {
+                preferences.dateType = document.getElementById('date-type')?.value;
+                preferences.budget = document.getElementById('budget')?.value;
+            } else if (selectedActivityType === 'entertainment') {
+                preferences.eventType = document.getElementById('event-type')?.value;
+                preferences.venueSize = document.getElementById('venue-size')?.value;
+            }
+            
+            const scenery = Array.from(document.querySelectorAll('input[name="scenery"]:checked'))
+                .map(cb => cb.value);
+            
+            const features = Array.from(document.querySelectorAll('input[name="features"]:checked'))
+                .map(cb => cb.value);
+
+            preferences.scenery = scenery;
+            preferences.features = features;
+
+            fetch('/api/preferences', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(preferences)
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Show discover tab
+                showTab('discover');
+                // Reset swiped arrays for new recommendations
+                swipedRight = [];
+                swipedLeft = [];
+                localStorage.setItem('swipedRight', JSON.stringify(swipedRight));
+                localStorage.setItem('swipedLeft', JSON.stringify(swipedLeft));
+                updateLikedCount();
+                loadRecommendations();
+            })
+            .catch(error => console.error('Error updating preferences:', error));
+        }
+
+        // Reset Profile Function
+        function resetProfile() {
+            const confirmReset = confirm('🔄 Reset Your Profile?\n\nThis will clear:\n• Activity type selection\n• All preferences\n• Liked activities\n• Calendar events\n• Swipe history\n\nAre you sure you want to start fresh?');
+            
+            if (confirmReset) {
+                // Clear all localStorage data
+                localStorage.removeItem('selectedActivityType');
+                localStorage.removeItem('swipedRight');
+                localStorage.removeItem('swipedLeft');
+                localStorage.removeItem('calendarEvents');
+                
+                // Reset application state
+                selectedActivityType = '';
+                swipedRight = [];
+                swipedLeft = [];
+                calendarEvents = {};
+                
+                // Reset UI
+                updateLikedCount();
+                updateCalendar();
+                highlightSelectedActivity();
+                updatePreferencesContent('');
+                
+                // Update header to default
+                document.querySelector('.header h1').textContent = '🎯 Bay Area Discovery';
+                document.querySelector('.header p').textContent = 'Swipe to discover your perfect adventure';
+                
+                // Go to activity type tab
+                showTab('activity-type');
+                
+                alert('✅ Profile reset! Please select your activity type to start fresh.');
+            }
+        }
+
+        // Update liked count display
+        function updateLikedCount() {
+            const countElement = document.getElementById('likedCount');
+            if (countElement) {
+                countElement.textContent = swipedRight.length;
+            }
+        }
+
+        // Recommendations Loading
+        async function loadRecommendations() {
+            const container = document.getElementById('swipeContainer');
+            container.innerHTML = '<div class="loading">Loading recommendations...</div>';
+
+            try {
+                const response = await fetch(`/api/recommendations?swiped_right=${JSON.stringify(swipedRight)}&swiped_left=${JSON.stringify(swipedLeft)}`);
+                const data = await response.json();
+
+                if (data.message) {
+                    container.innerHTML = `<div class="no-more-cards">${data.message}<br><br>🎉 Check your calendar to plan your adventures!</div>`;
+                    return;
+                }
+
+                currentHike = data;
+                displayHikeCard(data);
+            } catch (error) {
+                console.error('Error loading recommendations:', error);
+                container.innerHTML = '<div class="no-more-cards">Error loading recommendations</div>';
+            }
+        }
+
+        // Display Hike Card
+        function displayHikeCard(hike) {
+            const container = document.getElementById('swipeContainer');
+            
+            const socialProof = hike.socialProof || {};
+            const youtubeVideos = socialProof.youtubeVideos || [];
+            const redditPosts = socialProof.redditPosts || [];
+
+            // Multiple photos for dating app feel
+            const additionalPhotos = [
+                `https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80`,
+                `https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80`,
+                `https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=800&q=80`
+            ];
+
+            container.innerHTML = `
+                <div class="hike-card" id="currentCard">
+                    <div class="image-gallery">
+                        <div class="main-image">
+                            <img src="${hike.image}" alt="${hike.name}" onerror="this.src='https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800'">
+                            <div class="photo-counter">1/${additionalPhotos.length + 1}</div>
+                        </div>
+                        <div class="image-dots">
+                            <span class="dot active" onclick="showPhoto(0)"></span>
+                            ${additionalPhotos.map((_, index) => `<span class="dot" onclick="showPhoto(${index + 1})"></span>`).join('')}
+                        </div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="hike-title">${hike.name}</h3>
+                            <button class="info-btn" onclick="showFullDetails(${hike.id})">ℹ️</button>
+                        </div>
+                        <p class="hike-location">📍 ${hike.location}</p>
+                        
+                        <div class="hike-stats">
+                            <div class="stat">
+                                <div class="stat-value">${hike.distance} mi</div>
+                                <div class="stat-label">Distance</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">${hike.difficulty}</div>
+                                <div class="stat-label">Difficulty</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">${hike.elevation} ft</div>
+                                <div class="stat-label">Elevation</div>
+                            </div>
+                        </div>
+
+                        <p class="hike-description">${hike.description}</p>
+
+                        <div class="rating">
+                            <span class="stars">${'★'.repeat(Math.floor(hike.rating))}${'☆'.repeat(5-Math.floor(hike.rating))}</span>
+                            <span>${hike.rating} (${hike.reviewCount} reviews)</span>
+                        </div>
+
+                        <div class="action-links">
+                            <button class="link-btn" onclick="openGoogleMaps('${hike.name}', '${hike.location}')">
+                                🗺️ View on Maps
+                            </button>
+                            ${youtubeVideos.length > 0 ? `
+                                <button class="link-btn" onclick="openYouTube('${youtubeVideos[0].url}')">
+                                    🎥 Watch Review
+                                </button>
+                            ` : ''}
+                        </div>
+
+                        ${redditPosts.length > 0 ? `
+                            <div class="social-proof">
+                                <div class="reddit-posts">
+                                    <strong>💬 Reddit:</strong> ${redditPosts[0].summary}
+                                </div>
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+
+            // Store additional photos for gallery
+            window.currentPhotos = [hike.image, ...additionalPhotos];
+            setupSwipeGestures();
+        }
+
+        // Photo gallery functions
+        function showPhoto(index) {
+            const mainImage = document.querySelector('.main-image img');
+            const photoCounter = document.querySelector('.photo-counter');
+            const dots = document.querySelectorAll('.dot');
+            
+            if (window.currentPhotos && window.currentPhotos[index]) {
+                mainImage.src = window.currentPhotos[index];
+                photoCounter.textContent = `${index + 1}/${window.currentPhotos.length}`;
+                
+                // Update dots
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
+        }
+
+        // Action functions
+        function openGoogleMaps(name, location) {
+            const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name + ' ' + location)}`;
+            window.open(url, '_blank');
+        }
+
+        function openYouTube(url) {
+            window.open(url, '_blank');
+        }
+
+        async function showFullDetails(hikeId) {
+            try {
+                const response = await fetch(`/api/hike-details?id=${hikeId}`);
+                const hike = await response.json();
+                
+                alert(`🥾 ${hike.name}\n📍 ${hike.location}\n🚶 ${hike.distance} miles • ${hike.difficulty} • ${hike.elevation} ft elevation\n⭐ ${hike.rating}/5 (${hike.reviewCount} reviews)\n\n${hike.description}\n\nFeatures: ${hike.features.join(', ')}\nScenery: ${hike.scenery.join(', ')}`);
+            } catch (error) {
+                console.error('Error loading details:', error);
+            }
+        }
+
+        // Swipe Gesture Setup
+        function setupSwipeGestures() {
+            const card = document.getElementById('currentCard');
+            if (!card) return;
+
+            let startX = 0;
+            let currentX = 0;
+            let isDragging = false;
+
+            card.addEventListener('mousedown', startDrag);
+            card.addEventListener('touchstart', startDrag);
+
+            function startDrag(e) {
+                isDragging = true;
+                startX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
+                card.classList.add('swiping');
+                
+                document.addEventListener('mousemove', drag);
+                document.addEventListener('touchmove', drag);
+                document.addEventListener('mouseup', endDrag);
+                document.addEventListener('touchend', endDrag);
+            }
+
+            function drag(e) {
+                if (!isDragging) return;
+                
+                currentX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
+                const deltaX = currentX - startX;
+                const rotation = deltaX * 0.1;
+                
+                card.style.transform = `translateX(${deltaX}px) rotate(${rotation}deg)`;
+                
+                // Visual feedback
+                if (deltaX > 50) {
+                    card.style.borderColor = '#51cf66';
+                } else if (deltaX < -50) {
+                    card.style.borderColor = '#ff6b6b';
+                } else {
+                    card.style.borderColor = '';
+                }
+            }
+
+            function endDrag() {
+                if (!isDragging) return;
+                isDragging = false;
+                
+                const deltaX = currentX - startX;
+                
+                if (deltaX > 100) {
+                    swipeRight();
+                } else if (deltaX < -100) {
+                    swipeLeft();
+                } else {
+                    // Snap back
+                    card.style.transform = '';
+                    card.style.borderColor = '';
+                }
+                
+                card.classList.remove('swiping');
+                
+                document.removeEventListener('mousemove', drag);
+                document.removeEventListener('touchmove', drag);
+                document.removeEventListener('mouseup', endDrag);
+                document.removeEventListener('touchend', endDrag);
+            }
+        }
+
+        // Swipe Actions
+        function swipeRight() {
+            if (currentHike) {
+                swipedRight.push(currentHike.id);
+                localStorage.setItem('swipedRight', JSON.stringify(swipedRight));
+                updateLikedCount();
+                animateSwipe('right');
+                setTimeout(loadRecommendations, 300);
+            }
+        }
+
+        function swipeLeft() {
+            if (currentHike) {
+                swipedLeft.push(currentHike.id);
+                localStorage.setItem('swipedLeft', JSON.stringify(swipedLeft));
+                animateSwipe('left');
+                setTimeout(loadRecommendations, 300);
+            }
+        }
+
+        function animateSwipe(direction) {
+            const card = document.getElementById('currentCard');
+            if (card) {
+                const translateX = direction === 'right' ? '100vw' : '-100vw';
+                const rotation = direction === 'right' ? '30deg' : '-30deg';
+                card.style.transform = `translateX(${translateX}) rotate(${rotation})`;
+                card.style.opacity = '0';
+            }
+        }
+
+        // Calendar Functions
+        function updateCalendar() {
+            const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+                              'July', 'August', 'September', 'October', 'November', 'December'];
+            
+            document.getElementById('currentMonth').textContent = 
+                `${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+
+            const grid = document.getElementById('calendarGrid');
+            grid.innerHTML = '';
+
+            // Create day headers
+            const dayHeaders = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            dayHeaders.forEach(day => {
+                const header = document.createElement('div');
+                header.textContent = day;
+                header.style.fontWeight = 'bold';
+                header.style.textAlign = 'center';
+                header.style.padding = '10px';
+                grid.appendChild(header);
+            });
+
+            // Get first day of month and number of days
+            const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+            const lastDay = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+            const startDate = firstDay.getDay();
+            const daysInMonth = lastDay.getDate();
+
+            // Create empty cells for days before month starts
+            for (let i = 0; i < startDate; i++) {
+                grid.appendChild(document.createElement('div'));
+            }
+
+            // Create calendar days
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayElement = document.createElement('div');
+                dayElement.className = 'calendar-day';
+                dayElement.textContent = day;
+                
+                const dateKey = `${currentDate.getFullYear()}-${currentDate.getMonth()}-${day}`;
+                if (calendarEvents[dateKey]) {
+                    dayElement.classList.add('has-event');
+                    dayElement.title = `Click to manage: ${calendarEvents[dateKey].name}`;
+                    
+                    // Clear day number and show event details
+                    dayElement.innerHTML = '';
+                    
+                    // Day number
+                    const dayNumber = document.createElement('div');
+                    dayNumber.style.fontSize = '0.8rem';
+                    dayNumber.style.fontWeight = 'bold';
+                    dayNumber.textContent = day;
+                    dayElement.appendChild(dayNumber);
+                    
+                    // Show hike name on calendar - make it draggable and clickable
+                    const eventLabel = document.createElement('div');
+                    eventLabel.className = 'calendar-event';
+                    eventLabel.draggable = true;
+                    eventLabel.style.fontSize = '0.6rem';
+                    eventLabel.style.color = 'white';
+                    eventLabel.style.fontWeight = 'bold';
+                    eventLabel.style.textAlign = 'center';
+                    eventLabel.style.lineHeight = '1.1';
+                    eventLabel.style.marginTop = '2px';
+                    eventLabel.style.cursor = 'pointer';
+                    eventLabel.style.padding = '2px';
+                    eventLabel.style.borderRadius = '3px';
+                    eventLabel.style.backgroundColor = 'rgba(255,255,255,0.2)';
+                    eventLabel.textContent = calendarEvents[dateKey].name.split(' ')[0]; // First word only
+                    eventLabel.dataset.hikeId = calendarEvents[dateKey].id;
+                    eventLabel.dataset.hikeName = calendarEvents[dateKey].name;
+                    eventLabel.dataset.currentDate = dateKey;
+                    
+                    // Add drag events for moving between dates
+                    eventLabel.addEventListener('dragstart', handleEventDragStart);
+                    eventLabel.addEventListener('dragend', handleEventDragEnd);
+                    
+                    // Add click event for details - prevent event propagation
+                    eventLabel.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        handleEventClick(e);
+                    });
+                    
+                    // Also make the whole day clickable
+                    dayElement.addEventListener('click', function(e) {
+                        if (e.target === dayElement || e.target === dayNumber) {
+                            const fakeEvent = {
+                                target: {
+                                    dataset: {
+                                        hikeId: calendarEvents[dateKey].id,
+                                        hikeName: calendarEvents[dateKey].name,
+                                        currentDate: dateKey
+                                    }
+                                }
+                            };
+                            handleEventClick(fakeEvent);
+                        }
+                    });
+                    
+                    dayElement.appendChild(eventLabel);
+                } else {
+                    // Regular empty day
+                    dayElement.textContent = day;
+                }
+
+                dayElement.addEventListener('dragover', handleDragOver);
+                dayElement.addEventListener('drop', handleDrop);
+                dayElement.dataset.date = dateKey;
+
+                grid.appendChild(dayElement);
+            }
+        }
+
+        function prevMonth() {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            updateCalendar();
+        }
+
+        function nextMonth() {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            updateCalendar();
+        }
+
+        // Drag and Drop for Calendar
+        function updateLikedHikesList() {
+            const container = document.getElementById('likedHikesList');
+            
+            // Setup drop zone for calendar events
+            setupLikedHikesDropZone(container);
+            
+            fetch(`/api/liked-hikes?liked_ids=${JSON.stringify(swipedRight)}`)
+                .then(response => response.json())
+                .then(hikes => {
+                    if (hikes.length === 0) {
+                        container.innerHTML = `
+                            <p style="color: var(--text-secondary); text-align: center; padding: 20px;">
+                                No liked hikes yet. Go to the Discover tab and swipe right on trails you want to hike! 🥾
+                            </p>
+                        `;
+                        // Re-setup drop zone after updating content
+                        setupLikedHikesDropZone(container);
+                        return;
+                    }
+
+                    container.innerHTML = hikes.map(hike => `
+                        <div class="liked-hike-item" draggable="true" data-hike-id="${hike.id}" data-hike-name="${hike.name}">
+                            <strong>${hike.name}</strong>
+                            <div style="margin-top: 5px; font-size: 0.9rem; color: var(--text-secondary);">
+                                📍 ${hike.location} • ${hike.distance} miles • ${hike.difficulty}
+                            </div>
+                        </div>
+                    `).join('');
+
+                    // Setup drag events for liked hikes
+                    container.querySelectorAll('.liked-hike-item').forEach(item => {
+                        item.addEventListener('dragstart', handleDragStart);
+                        item.addEventListener('dragend', handleDragEnd);
+                    });
+                    
+                    // Re-setup drop zone after updating content
+                    setupLikedHikesDropZone(container);
+                })
+                .catch(error => {
+                    console.error('Error loading liked hikes:', error);
+                    container.innerHTML = `
+                        <p style="color: var(--text-secondary); text-align: center; padding: 20px;">
+                            Error loading liked hikes. Please try again.
+                        </p>
+                    `;
+                    // Re-setup drop zone after updating content
+                    setupLikedHikesDropZone(container);
+                });
+        }
+
+        // Setup drop zone for liked hikes list
+        function setupLikedHikesDropZone(container) {
+            container.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                const dragType = e.dataTransfer.types.includes('text/dragtype') ? 
+                    e.dataTransfer.getData('text/dragtype') : null;
+                
+                if (dragType === 'calendar-event') {
+                    container.classList.add('drag-over');
+                }
+            });
+
+            container.addEventListener('dragleave', function(e) {
+                // Only remove drag-over if we're actually leaving the container
+                if (!container.contains(e.relatedTarget)) {
+                    container.classList.remove('drag-over');
+                }
+            });
+
+            container.addEventListener('drop', function(e) {
+                e.preventDefault();
+                container.classList.remove('drag-over');
+                
+                const dragType = e.dataTransfer.getData('text/dragType');
+                const data = JSON.parse(e.dataTransfer.getData('text/plain'));
+                
+                if (dragType === 'calendar-event') {
+                    // Moving calendar event back to liked list
+                    const currentDate = data.currentDate;
+                    const hikeId = parseInt(data.hikeId);
+                    const hikeName = data.hikeName;
+                    
+                    // Remove from calendar
+                    delete calendarEvents[currentDate];
+                    localStorage.setItem('calendarEvents', JSON.stringify(calendarEvents));
+                    
+                    // Add back to liked list
+                    if (!swipedRight.includes(hikeId)) {
+                        swipedRight.push(hikeId);
+                        localStorage.setItem('swipedRight', JSON.stringify(swipedRight));
+                    }
+                    
+                    // Update displays
+                    updateCalendar();
+                    updateLikedHikesList();
+                    updateLikedCount();
+                    
+                    // Show feedback
+                    showDropFeedback(`🥾 ${hikeName} moved back to your liked list!`);
+                }
+            });
+        }
+
+        // Show visual feedback for successful drops
+        function showDropFeedback(message) {
+            const feedback = document.createElement('div');
+            feedback.style.position = 'fixed';
+            feedback.style.top = '50%';
+            feedback.style.left = '50%';
+            feedback.style.transform = 'translate(-50%, -50%)';
+            feedback.style.background = 'var(--primary)';
+            feedback.style.color = 'white';
+            feedback.style.padding = '15px 25px';
+            feedback.style.borderRadius = '10px';
+            feedback.style.boxShadow = '0 5px 20px rgba(0,0,0,0.3)';
+            feedback.style.zIndex = '1000';
+            feedback.style.fontSize = '1.1rem';
+            feedback.style.fontWeight = 'bold';
+            feedback.textContent = message;
+            
+            document.body.appendChild(feedback);
+            
+            setTimeout(() => {
+                feedback.style.opacity = '0';
+                setTimeout(() => {
+                    document.body.removeChild(feedback);
+                }, 300);
+            }, 2000);
+        }
+
+        function handleDragStart(e) {
+            e.target.classList.add('dragging');
+            e.dataTransfer.setData('text/plain', JSON.stringify({
+                id: e.target.dataset.hikeId,
+                name: e.target.dataset.hikeName
+            }));
+        }
+
+        function handleDragEnd(e) {
+            e.target.classList.remove('dragging');
+        }
+
+        function handleDragOver(e) {
+            e.preventDefault();
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            const data = JSON.parse(e.dataTransfer.getData('text/plain'));
+            const dragType = e.dataTransfer.getData('text/dragType');
+            let dateKey = e.target.dataset.date;
+            
+            // Handle dropping on calendar day or event within day
+            if (!dateKey && e.target.parentElement && e.target.parentElement.dataset.date) {
+                dateKey = e.target.parentElement.dataset.date;
+            }
+            
+            if (dateKey) {
+                if (dragType === 'calendar-event') {
+                    // Moving event between calendar dates
+                    const oldDateKey = data.currentDate;
+                    
+                    // Remove from old date
+                    delete calendarEvents[oldDateKey];
+                    
+                    // Add to new date
+                    calendarEvents[dateKey] = {
+                        id: data.hikeId,
+                        name: data.hikeName
+                    };
+                    
+                    localStorage.setItem('calendarEvents', JSON.stringify(calendarEvents));
+                    updateCalendar();
+                    
+                } else {
+                    // Adding from liked list to calendar - store full hike data
+                    calendarEvents[dateKey] = {
+                        id: data.id,
+                        name: data.name,
+                        location: data.location || 'Unknown location',
+                        difficulty: data.difficulty || 'Unknown',
+                        distance: data.distance || 0,
+                        elevation: data.elevation || 0,
+                        rating: data.rating || 0,
+                        reviewCount: data.reviewCount || 0,
+                        description: data.description || 'No description available',
+                        features: data.features || [],
+                        scenery: data.scenery || []
+                    };
+                    localStorage.setItem('calendarEvents', JSON.stringify(calendarEvents));
+                    
+                    // Remove from liked list
+                    const hikeId = parseInt(data.id);
+                    swipedRight = swipedRight.filter(id => id !== hikeId);
+                    localStorage.setItem('swipedRight', JSON.stringify(swipedRight));
+                    
+                    // Update displays
+                    updateCalendar();
+                    updateLikedHikesList();
+                    updateLikedCount();
+                    
+                    alert(`🥾 ${data.name} scheduled for ${dateKey}! Your hiking adventure is planned!`);
+                }
+            }
+        }
+
+        // Handle dragging events from calendar
+        function handleEventDragStart(e) {
+            e.stopPropagation();
+            e.target.style.opacity = '0.5';
+            e.dataTransfer.setData('text/dragType', 'calendar-event');
+            e.dataTransfer.setData('text/dragtype', 'calendar-event'); // For compatibility
+            e.dataTransfer.setData('text/plain', JSON.stringify({
+                hikeId: e.target.dataset.hikeId,
+                hikeName: e.target.dataset.hikeName,
+                currentDate: e.target.dataset.currentDate
+            }));
+        }
+
+        function handleEventDragEnd(e) {
+            e.target.style.opacity = '';
+        }
+
+        // Handle clicking on calendar events
+        async function handleEventClick(e) {
+            e.stopPropagation();
+            const hikeId = parseInt(e.target.dataset.hikeId);
+            const hikeName = e.target.dataset.hikeName;
+            const currentDate = e.target.dataset.currentDate;
+            
+            try {
+                // Get hike details from calendar storage first, fallback to API
+                let hike = calendarEvents[currentDate];
+                
+                if (!hike || !hike.location) {
+                    // Fallback to API if data is incomplete
+                    const response = await fetch(`/api/hike-details?id=${hikeId}`);
+                    hike = await response.json();
+                }
+                
+                const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(hike.name + ' ' + hike.location)}`;
+                
+                // Create custom dialog with three options
+                const result = prompt(`🥾 ${hike.name}\n📍 ${hike.location}\n🚶 ${hike.distance} miles • ${hike.difficulty}\n⭐ ${hike.rating}/5 (${hike.reviewCount} reviews)\n\n${hike.description}\n\nOptions:\n1 - Open in Google Maps\n2 - Move back to liked list\n3 - Remove completely\n\nEnter 1, 2, or 3:`);
+                
+                if (result === '1') {
+                    // Open Google Maps
+                    window.open(googleMapsUrl, '_blank');
+                } else if (result === '2') {
+                    // Move back to liked list
+                    
+                    // Remove from calendar
+                    delete calendarEvents[currentDate];
+                    localStorage.setItem('calendarEvents', JSON.stringify(calendarEvents));
+                    
+                    // Add back to liked list
+                    if (!swipedRight.includes(hikeId)) {
+                        swipedRight.push(hikeId);
+                        localStorage.setItem('swipedRight', JSON.stringify(swipedRight));
+                    }
+                    
+                    // Update displays
+                    updateCalendar();
+                    updateLikedHikesList();
+                    updateLikedCount();
+                    
+                    alert(`🥾 ${hikeName} moved back to your liked list!`);
+                } else if (result === '3') {
+                    // Remove completely
+                    
+                    // Remove from calendar
+                    delete calendarEvents[currentDate];
+                    localStorage.setItem('calendarEvents', JSON.stringify(calendarEvents));
+                    
+                    // Update displays
+                    updateCalendar();
+                    
+                    alert(`🥾 ${hikeName} removed from your calendar!`);
+                }
+            } catch (error) {
+                console.error('Error getting hike details:', error);
+                
+                // Fallback to basic info if API fails
+                const currentDate = e.target.dataset.currentDate;
+                const hike = calendarEvents[currentDate];
+                
+                if (hike) {
+                    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(hike.name)}`;
+                    const result = prompt(`🥾 ${hike.name}\n\nAPI unavailable, showing basic options:\n\nOptions:\n1 - Open in Google Maps\n2 - Move back to liked list\n3 - Remove completely\n\nEnter 1, 2, or 3:`);
+                    
+                    if (result === '1') {
+                        window.open(googleMapsUrl, '_blank');
+                    } else if (result === '2') {
+                        delete calendarEvents[currentDate];
+                        localStorage.setItem('calendarEvents', JSON.stringify(calendarEvents));
+                        if (!swipedRight.includes(hikeId)) {
+                            swipedRight.push(hikeId);
+                            localStorage.setItem('swipedRight', JSON.stringify(swipedRight));
+                        }
+                        updateCalendar();
+                        updateLikedHikesList();
+                        updateLikedCount();
+                        alert(`🥾 ${hikeName} moved back to your liked list!`);
+                    } else if (result === '3') {
+                        delete calendarEvents[currentDate];
+                        localStorage.setItem('calendarEvents', JSON.stringify(calendarEvents));
+                        updateCalendar();
+                        alert(`🥾 ${hikeName} removed from your calendar!`);
+                    }
+                } else {
+                    alert('Unable to load event details. Please try refreshing the page.');
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,685 @@
+🚀 AI Nutrition Advisor running on port 3002
+📱 Access the web interface at: http://localhost:3002
+
+🔧 Features:
+✅ YouTube API integration
+✅ OpenAI integration for real summaries
+✅ Channel information display
+✅ Video processing with AI summaries
+✅ Question answering system
+✅ No external dependencies needed
+✅ Automatic video sync every 30 minutes
+
+🔄 Loading existing processed videos...
+📚 Found 36 stored video transcripts
+📋 Loaded existing video: The 10 Dangerous Foods RFK Jr. Just BANNED
+📋 Loaded existing video: The Dr. Berg Show LIVE - June 27, 2025
+📋 Loaded existing video: High Doses of Vitamin D3 Every Day?
+📋 Loaded existing video: What's Really in Cheap Grocery Store Bacon
+📋 Loaded existing video: Dr. Berg Rates These Ingredients 1 to 10!
+📋 Loaded existing video: Get RID of Warts Overnight!
+📋 Loaded existing video: The Big Collagen Mistake
+📋 Loaded existing video: STOP Sugar For 14 Days
+📋 Loaded existing video: Castor Oil for Your Face (Nature’s Botox)
+📋 Loaded existing video: Why You Are TIRED All the Time
+📋 Loaded existing video: STOP Eating for 3 Days
+📋 Loaded existing video: The Dr. Berg Show LIVE - June 20, 2025
+📋 Loaded existing video: The DIRTIEST Foods You Eat Daily
+📋 Loaded existing video: Your Body NEEDS Vitamin D
+📋 Loaded existing video: Zinc Deficiency Warning Signs
+📋 Loaded existing video: The #1 Most DANGEROUS Food for the Heart
+📋 Loaded existing video: Why Is No One Talking About This?!
+📋 Loaded existing video: The BIGGEST LIE You Were Never Meant to Find Out
+📋 Loaded existing video: The Dr. Berg Show LIVE - June 13, 2025
+📋 Loaded existing video: This Combo Activates Your Body's Power Switch
+📋 Loaded existing video: Autism Is NOT Caused By Vaccines
+📋 Loaded existing video: SHOCKING Signs You’re Low on Copper
+📋 Loaded existing video: The MOST Dangerous Food for the Gut
+📋 Loaded existing video: We've Been Eating Fake Cheese
+📋 Loaded existing video: The REAL Reason Food Dyes are Still Legal in the US (But Banned in Europe)
+📋 Loaded existing video: This Will Piss You Off!
+📋 Loaded existing video: The Dr. Berg Show LIVE - June 6, 2025
+📋 Loaded existing video: Most Common Symptoms of Nutritional Deficiencies
+📋 Loaded existing video: The #1 MOST Anti-aging Food in the World!
+📋 Loaded existing video: #1 MOST Anti-inflammatory Food in the World
+📋 Loaded existing video: #1 Most DANGEROUS Risk of a Collagen Deficiency
+📋 Loaded existing video: The SHOCKING #1 Cause of Heart Attacks
+📋 Loaded existing video: The #1 Most POWERFUL Remedy in the World!
+📋 Loaded existing video: NEVER Drink Baking Soda Until You Watch This!
+📋 Loaded existing video: The Dr. Berg Show LIVE - May 30, 2025
+📋 Loaded existing video: Why This ONE Food Is Wrecking Your Health
+✅ Total videos loaded: 36
+⏰ Setting up automatic video sync every 30 minutes
+💡 Videos will load automatically - no manual sync needed!
+🔄 Initial auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-29T23:48:08.486Z
+✅ Auto-sync completed: No new videos found
+📚 Getting good ingredients from comprehensive hardcoded analysis...
+📚 Getting bad ingredients from comprehensive hardcoded analysis...
+📚 Getting vitamins ingredients from comprehensive hardcoded analysis...
+📺 Serving 9 videos from last week (out of 36 total processed)
+📚 Getting good ingredients from comprehensive hardcoded analysis...
+🖼️ Getting image for: Eggs (good)
+📸 Fetching photo for: Eggs
+🔗 Making request to: https://api.unsplash.com/search/photos?query=fresh%20eggs%20bright%20natural%20lighting%20clean%20white%20background&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+🖼️ Getting image for: Grass-Fed Beef (good)
+📸 Fetching photo for: Grass-Fed Beef
+🔗 Making request to: https://api.unsplash.com/search/photos?query=Grass-Fed%20Beef%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+🖼️ Getting image for: Pasture-Raised Bacon (good)
+📸 Fetching photo for: Pasture-Raised Bacon
+🔗 Making request to: https://api.unsplash.com/search/photos?query=Pasture-Raised%20Bacon%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+🖼️ Getting image for: Parmigiano Reggiano (good)
+📸 Fetching photo for: Parmigiano Reggiano
+🔗 Making request to: https://api.unsplash.com/search/photos?query=Parmigiano%20Reggiano%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+🖼️ Getting image for: Brazil Nuts (good)
+📸 Fetching photo for: Brazil Nuts
+🔗 Making request to: https://api.unsplash.com/search/photos?query=Brazil%20Nuts%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+🖼️ Getting image for: Sardines (good)
+📸 Fetching photo for: Sardines
+🔗 Making request to: https://api.unsplash.com/search/photos?query=fresh%20sardines%20bright%20natural%20lighting%20clean%20plate&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"dHQ-uSf3M4w","slug":"a-bunch-of-eggs-sitting-on-top-of-a-towel-dHQ-uSf3M4w","alternative_slugs":{"en":"a-bunch-of-eggs-sitting-on-top-of-a-towel-dHQ-u...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Eggs: https://images.unsplash.com/photo-1727060594262-4f33f877be3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxmcmVzaCUyMGVnZ3MlMjBicmlnaHQlMjBuYXR1cmFsJTIwbGlnaHRpbmclMjBjbGVhbiUyMHdoaXRlJTIwYmFja2dyb3VuZHxlbnwwfDB8MXx8MTc1MTE4ODM1MHww&ixlib=rb-4.1.0&q=80&w=1080
+🖼️ Getting image for: Grass-Fed Liver (good)
+📸 Fetching photo for: Grass-Fed Liver
+🔗 Making request to: https://api.unsplash.com/search/photos?query=Grass-Fed%20Liver%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"jFugeo24Y4k","slug":"a-glass-bowl-filled-with-a-salad-on-top-of-a-wooden-table-jFugeo24Y4k","alternative_slugs":{"en":"a-glass-bowl-filled-with-a-sala...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Parmigiano Reggiano: https://images.unsplash.com/photo-1692106914247-4f9f1850eeab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxQYXJtaWdpYW5vJTIwUmVnZ2lhbm8lMjBicmlnaHQlMjBuYXR1cmFsJTIwbGlnaHRpbmclMjBzYWxhZCUyMGJhciUyMHN0eWxlJTIwZnJlc2h8ZW58MHwwfDF8fDE3NTEyMzIwNDZ8MA&ixlib=rb-4.1.0&q=80&w=1080
+🖼️ Getting image for: Olive Oil (good)
+📸 Fetching photo for: Olive Oil
+🔗 Making request to: https://api.unsplash.com/search/photos?query=Olive%20Oil%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"3NU0OTivB9E","slug":"shallow-focus-photo-of-fish-on-stainless-steel-surface-3NU0OTivB9E","alternative_slugs":{"en":"shallow-focus-photo-of-fish-on-sta...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Sardines: https://images.unsplash.com/photo-1567087978459-8a8eeac7bc75?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxmcmVzaCUyMHNhcmRpbmVzJTIwYnJpZ2h0JTIwbmF0dXJhbCUyMGxpZ2h0aW5nJTIwY2xlYW4lMjBwbGF0ZXxlbnwwfDB8MXx8MTc1MTE4ODM1MHww&ixlib=rb-4.1.0&q=80&w=1080
+🖼️ Getting image for: Butter (good)
+📸 Fetching photo for: Butter
+🔗 Making request to: https://api.unsplash.com/search/photos?query=Butter%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"CA5Tu8hRvYU","slug":"green-vegetable-on-brown-wooden-chopping-board-CA5Tu8hRvYU","alternative_slugs":{"en":"green-vegetable-on-brown-wooden-chopping-b...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Butter: https://images.unsplash.com/photo-1617720042767-79fd01daa61e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxCdXR0ZXIlMjBicmlnaHQlMjBuYXR1cmFsJTIwbGlnaHRpbmclMjBzYWxhZCUyMGJhciUyMHN0eWxlJTIwZnJlc2h8ZW58MHwwfDF8fDE3NTEyNDA5NTl8MA&ixlib=rb-4.1.0&q=80&w=1080
+🖼️ Getting image for: Coconut Oil (good)
+📸 Fetching photo for: Coconut Oil
+🔗 Making request to: https://api.unsplash.com/search/photos?query=Coconut%20Oil%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"fyMhLq9ckoQ","slug":"food-photography-of-cooked-steak-fyMhLq9ckoQ","alternative_slugs":{"en":"food-photography-of-cooked-steak-fyMhLq9ckoQ","es":"foto...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Olive Oil: https://images.unsplash.com/photo-1563027221-46c272407e95?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxPbGl2ZSUyME9pbCUyMGJyaWdodCUyMG5hdHVyYWwlMjBsaWdodGluZyUyMHNhbGFkJTIwYmFyJTIwc3R5bGUlMjBmcmVzaHxlbnwwfDB8MXx8MTc1MTI0MDk1OXww&ixlib=rb-4.1.0&q=80&w=1080
+🖼️ Getting image for: Fermented Vegetables (good)
+📸 Fetching photo for: Fermented Vegetables
+🔗 Making request to: https://api.unsplash.com/search/photos?query=Fermented%20Vegetables%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"5TsmPn4T76o","slug":"a-plate-of-salad-on-a-wooden-table-5TsmPn4T76o","alternative_slugs":{"en":"a-plate-of-salad-on-a-wooden-table-5TsmPn4T76o","es":"...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Grass-Fed Beef: https://images.unsplash.com/photo-1671898295493-b8a75407dadb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxHcmFzcy1GZWQlMjBCZWVmJTIwYnJpZ2h0JTIwbmF0dXJhbCUyMGxpZ2h0aW5nJTIwc2FsYWQlMjBiYXIlMjBzdHlsZSUyMGZyZXNofGVufDB8MHwxfHwxNzUxMjQwOTU5fDA&ixlib=rb-4.1.0&q=80&w=1080
+🖼️ Getting image for: L. Reuteri Yogurt (good)
+📸 Fetching photo for: L. Reuteri Yogurt
+🔗 Making request to: https://api.unsplash.com/search/photos?query=L.%20Reuteri%20Yogurt%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"kMpbi3TeFE4","slug":"a-plate-of-salad-on-a-black-table-kMpbi3TeFE4","alternative_slugs":{"en":"a-plate-of-salad-on-a-black-table-kMpbi3TeFE4","es":"un...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Grass-Fed Liver: https://images.unsplash.com/photo-1678007698777-c3477535532b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxHcmFzcy1GZWQlMjBMaXZlciUyMGJyaWdodCUyMG5hdHVyYWwlMjBsaWdodGluZyUyMHNhbGFkJTIwYmFyJTIwc3R5bGUlMjBmcmVzaHxlbnwwfDB8MXx8MTc1MTI0MDk1OXww&ixlib=rb-4.1.0&q=80&w=1080
+🖼️ Getting image for: Castor Oil (good)
+📸 Fetching photo for: Castor Oil
+🔗 Making request to: https://api.unsplash.com/search/photos?query=Castor%20Oil%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"nPExVunqou0","slug":"a-person-holding-a-black-plate-with-slices-of-bacon-on-it-nPExVunqou0","alternative_slugs":{"en":"a-person-holding-a-black-plate-...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Pasture-Raised Bacon: https://images.unsplash.com/photo-1708388464065-e418c2a75077?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxQYXN0dXJlLVJhaXNlZCUyMEJhY29uJTIwYnJpZ2h0JTIwbmF0dXJhbCUyMGxpZ2h0aW5nJTIwc2FsYWQlMjBiYXIlMjBzdHlsZSUyMGZyZXNofGVufDB8MHwxfHwxNzUxMjQwOTU5fDA&ixlib=rb-4.1.0&q=80&w=1080
+🖼️ Getting image for: Apple Cider Vinegar (good)
+📸 Fetching photo for: Apple Cider Vinegar
+🔗 Making request to: https://api.unsplash.com/search/photos?query=Apple%20Cider%20Vinegar%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"aun-1Fqo0eg","slug":"display-shelves-of-fruits-aun-1Fqo0eg","alternative_slugs":{"en":"display-shelves-of-fruits-aun-1Fqo0eg","es":"estanterias-de-exh...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Brazil Nuts: https://images.unsplash.com/photo-1542861412-dfb8740359ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxCcmF6aWwlMjBOdXRzJTIwYnJpZ2h0JTIwbmF0dXJhbCUyMGxpZ2h0aW5nJTIwc2FsYWQlMjBiYXIlMjBzdHlsZSUyMGZyZXNofGVufDB8MHwxfHwxNzUxMjQwOTU5fDA&ixlib=rb-4.1.0&q=80&w=1080
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"NJJC6s9F2yI","slug":"a-white-plate-topped-with-sliced-up-veggies-NJJC6s9F2yI","alternative_slugs":{"en":"a-white-plate-topped-with-sliced-up-veggies-N...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Fermented Vegetables: https://images.unsplash.com/photo-1641919105784-f0838a756e58?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxGZXJtZW50ZWQlMjBWZWdldGFibGVzJTIwYnJpZ2h0JTIwbmF0dXJhbCUyMGxpZ2h0aW5nJTIwc2FsYWQlMjBiYXIlMjBzdHlsZSUyMGZyZXNofGVufDB8MHwxfHwxNzUxMjQwOTU5fDA&ixlib=rb-4.1.0&q=80&w=1080
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"XoJw9IaWxAo","slug":"a-bowl-of-fruit-is-sitting-on-a-table-XoJw9IaWxAo","alternative_slugs":{"en":"a-bowl-of-fruit-is-sitting-on-a-table-XoJw9IaWxAo",...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for L. Reuteri Yogurt: https://images.unsplash.com/photo-1719783779960-bcfb8f885e46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxMLiUyMFJldXRlcmklMjBZb2d1cnQlMjBicmlnaHQlMjBuYXR1cmFsJTIwbGlnaHRpbmclMjBzYWxhZCUyMGJhciUyMHN0eWxlJTIwZnJlc2h8ZW58MHwwfDF8fDE3NTEyNDA5NTl8MA&ixlib=rb-4.1.0&q=80&w=1080
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"xKP64a3d1JU","slug":"a-close-up-of-a-plant-xKP64a3d1JU","alternative_slugs":{"en":"a-close-up-of-a-plant-xKP64a3d1JU","es":"un-primer-plano-de-una-pla...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Coconut Oil: https://images.unsplash.com/photo-1661655813469-de5edded10de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxDb2NvbnV0JTIwT2lsJTIwYnJpZ2h0JTIwbmF0dXJhbCUyMGxpZ2h0aW5nJTIwc2FsYWQlMjBiYXIlMjBzdHlsZSUyMGZyZXNofGVufDB8MHwxfHwxNzUxMjQwOTU5fDA&ixlib=rb-4.1.0&q=80&w=1080
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"kMpbi3TeFE4","slug":"a-plate-of-salad-on-a-black-table-kMpbi3TeFE4","alternative_slugs":{"en":"a-plate-of-salad-on-a-black-table-kMpbi3TeFE4","es":"un...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Castor Oil: https://images.unsplash.com/photo-1678007698777-c3477535532b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxDYXN0b3IlMjBPaWwlMjBicmlnaHQlMjBuYXR1cmFsJTIwbGlnaHRpbmclMjBzYWxhZCUyMGJhciUyMHN0eWxlJTIwZnJlc2h8ZW58MHwwfDF8fDE3NTEyNDA5NTl8MA&ixlib=rb-4.1.0&q=80&w=1080
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"2dq18LwtDFo","slug":"two-baskets-full-of-grapes-2dq18LwtDFo","alternative_slugs":{"en":"two-baskets-full-of-grapes-2dq18LwtDFo","es":"dos-cestas-llena...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Apple Cider Vinegar: https://images.unsplash.com/photo-1652284299096-318b96215ad9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxBcHBsZSUyMENpZGVyJTIwVmluZWdhciUyMGJyaWdodCUyMG5hdHVyYWwlMjBsaWdodGluZyUyMHNhbGFkJTIwYmFyJTIwc3R5bGUlMjBmcmVzaHxlbnwwfDB8MXx8MTc1MTI0MDk1OXww&ixlib=rb-4.1.0&q=80&w=1080
+📚 Getting vitamins ingredients from comprehensive hardcoded analysis...
+📚 Getting bad ingredients from comprehensive hardcoded analysis...
+🖼️ Getting image for: Seed Oils (bad)
+📸 Fetching photo for: Seed Oils
+🔗 Making request to: https://api.unsplash.com/search/photos?query=Seed%20Oils%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+🖼️ Getting image for: High-Fructose Corn Syrup (bad)
+📸 Fetching photo for: High-Fructose Corn Syrup
+🔗 Making request to: https://api.unsplash.com/search/photos?query=High-Fructose%20Corn%20Syrup%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+🖼️ Getting image for: Ultra-Processed Foods (bad)
+📸 Fetching photo for: Ultra-Processed Foods
+🔗 Making request to: https://api.unsplash.com/search/photos?query=Ultra-Processed%20Foods%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+🖼️ Getting image for: Artificial Food Dyes (bad)
+📸 Fetching photo for: Artificial Food Dyes
+🔗 Making request to: https://api.unsplash.com/search/photos?query=Artificial%20Food%20Dyes%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+🖼️ Getting image for: Maltodextrin (bad)
+📸 Fetching photo for: Maltodextrin
+🔗 Making request to: https://api.unsplash.com/search/photos?query=Maltodextrin%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+🖼️ Getting image for: Commodity Bacon (bad)
+📸 Fetching photo for: Commodity Bacon
+🔗 Making request to: https://api.unsplash.com/search/photos?query=Commodity%20Bacon%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"gMXJyee6slM","slug":"a-plate-of-salad-with-dressing-on-the-side-gMXJyee6slM","alternative_slugs":{"en":"a-plate-of-salad-with-dressing-on-the-side-gMX...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Commodity Bacon: https://images.unsplash.com/photo-1678007698853-c3b6dc24aa12?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxDb21tb2RpdHklMjBCYWNvbiUyMGJyaWdodCUyMG5hdHVyYWwlMjBsaWdodGluZyUyMHNhbGFkJTIwYmFyJTIwc3R5bGUlMjBmcmVzaHxlbnwwfDB8MXx8MTc1MTI0MTAyNXww&ixlib=rb-4.1.0&q=80&w=1080
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"B5bDpc8RTPc","slug":"sliced-fruit-on-black-ceramic-bowl-B5bDpc8RTPc","alternative_slugs":{"en":"sliced-fruit-on-black-ceramic-bowl-B5bDpc8RTPc","es":"...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for High-Fructose Corn Syrup: https://images.unsplash.com/photo-1583681781011-e03d726981df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxIaWdoLUZydWN0b3NlJTIwQ29ybiUyMFN5cnVwJTIwYnJpZ2h0JTIwbmF0dXJhbCUyMGxpZ2h0aW5nJTIwc2FsYWQlMjBiYXIlMjBzdHlsZSUyMGZyZXNofGVufDB8MHwxfHwxNzUxMjQxMDI1fDA&ixlib=rb-4.1.0&q=80&w=1080
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"kMpbi3TeFE4","slug":"a-plate-of-salad-on-a-black-table-kMpbi3TeFE4","alternative_slugs":{"en":"a-plate-of-salad-on-a-black-table-kMpbi3TeFE4","es":"un...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Maltodextrin: https://images.unsplash.com/photo-1678007698777-c3477535532b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxNYWx0b2RleHRyaW4lMjBicmlnaHQlMjBuYXR1cmFsJTIwbGlnaHRpbmclMjBzYWxhZCUyMGJhciUyMHN0eWxlJTIwZnJlc2h8ZW58MHwwfDF8fDE3NTEyNDEwMjV8MA&ixlib=rb-4.1.0&q=80&w=1080
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"0ktVebNAT-c","slug":"a-salad-with-tomatoes-and-lettuce-0ktVebNAT-c","alternative_slugs":{"en":"a-salad-with-tomatoes-and-lettuce-0ktVebNAT-c","es":"un...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Ultra-Processed Foods: https://images.unsplash.com/photo-1660820671751-2858c651f479?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxVbHRyYS1Qcm9jZXNzZWQlMjBGb29kcyUyMGJyaWdodCUyMG5hdHVyYWwlMjBsaWdodGluZyUyMHNhbGFkJTIwYmFyJTIwc3R5bGUlMjBmcmVzaHxlbnwwfDB8MXx8MTc1MTI0MTAyNXww&ixlib=rb-4.1.0&q=80&w=1080
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"BAjNi9ar6-I","slug":"a-bunch-of-plants-that-are-in-a-room-BAjNi9ar6-I","alternative_slugs":{"en":"a-bunch-of-plants-that-are-in-a-room-BAjNi9ar6-I","e...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Artificial Food Dyes: https://images.unsplash.com/photo-1633352184849-1c28c22d7757?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxBcnRpZmljaWFsJTIwRm9vZCUyMER5ZXMlMjBicmlnaHQlMjBuYXR1cmFsJTIwbGlnaHRpbmclMjBzYWxhZCUyMGJhciUyMHN0eWxlJTIwZnJlc2h8ZW58MHwwfDF8fDE3NTEyNDEwMjV8MA&ixlib=rb-4.1.0&q=80&w=1080
+🖼️ Getting image for: Titanium Dioxide (bad)
+📸 Fetching photo for: Titanium Dioxide
+🔗 Making request to: https://api.unsplash.com/search/photos?query=Titanium%20Dioxide%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"XUKoKUSHUEs","slug":"a-bunch-of-purple-and-white-flowers-in-a-field-XUKoKUSHUEs","alternative_slugs":{"en":"a-bunch-of-purple-and-white-flowers-in-a-f...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Seed Oils: https://images.unsplash.com/photo-1711691663475-29ad3e768e48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxTZWVkJTIwT2lscyUyMGJyaWdodCUyMG5hdHVyYWwlMjBsaWdodGluZyUyMHNhbGFkJTIwYmFyJTIwc3R5bGUlMjBmcmVzaHxlbnwwfDB8MXx8MTc1MTI0MTAyNXww&ixlib=rb-4.1.0&q=80&w=1080
+🖼️ Getting image for: GMO Corn Products (bad)
+📸 Fetching photo for: GMO Corn Products
+🔗 Making request to: https://api.unsplash.com/search/photos?query=GMO%20Corn%20Products%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+🖼️ Getting image for: Artificial Sweeteners (bad)
+📸 Fetching photo for: Artificial Sweeteners
+🔗 Making request to: https://api.unsplash.com/search/photos?query=artificial%20sweetener%20packets%20bright%20clean&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+🖼️ Getting image for: Dirty Produce (bad)
+📸 Fetching photo for: Dirty Produce
+🔗 Making request to: https://api.unsplash.com/search/photos?query=Dirty%20Produce%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+🖼️ Getting image for: Brominated Vegetable Oil (bad)
+📸 Fetching photo for: Brominated Vegetable Oil
+🔗 Making request to: https://api.unsplash.com/search/photos?query=Brominated%20Vegetable%20Oil%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+🖼️ Getting image for: American Parmesan (bad)
+📸 Fetching photo for: American Parmesan
+🔗 Making request to: https://api.unsplash.com/search/photos?query=American%20Parmesan%20bright%20natural%20lighting%20salad%20bar%20style%20fresh&per_page=3&orientation=landscape&order_by=popular
+🔑 Using Unsplash key: Gdb1OIKfWk...
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"cebsrEJgd1M","slug":"a-piece-of-white-paper-sitting-on-top-of-a-yellow-and-red-background-cebsrEJgd1M","alternative_slugs":{"en":"a-piece-of-white-pap...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Artificial Sweeteners: https://images.unsplash.com/photo-1712677672825-9344a2955a88?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwc3dlZXRlbmVyJTIwcGFja2V0cyUyMGJyaWdodCUyMGNsZWFufGVufDB8MHwxfHwxNzUxMjI4MTc1fDA&ixlib=rb-4.1.0&q=80&w=1080
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"kMpbi3TeFE4","slug":"a-plate-of-salad-on-a-black-table-kMpbi3TeFE4","alternative_slugs":{"en":"a-plate-of-salad-on-a-black-table-kMpbi3TeFE4","es":"un...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Titanium Dioxide: https://images.unsplash.com/photo-1678007698777-c3477535532b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxUaXRhbml1bSUyMERpb3hpZGUlMjBicmlnaHQlMjBuYXR1cmFsJTIwbGlnaHRpbmclMjBzYWxhZCUyMGJhciUyMHN0eWxlJTIwZnJlc2h8ZW58MHwwfDF8fDE3NTEyNDEwMjV8MA&ixlib=rb-4.1.0&q=80&w=1080
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"gYWkQ3Z1Luc","slug":"a-close-up-of-corn-on-the-cob-gYWkQ3Z1Luc","alternative_slugs":{"en":"a-close-up-of-corn-on-the-cob-gYWkQ3Z1Luc","es":"un-primer-...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for GMO Corn Products: https://images.unsplash.com/photo-1675347274514-6f2442593a40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxHTU8lMjBDb3JuJTIwUHJvZHVjdHMlMjBicmlnaHQlMjBuYXR1cmFsJTIwbGlnaHRpbmclMjBzYWxhZCUyMGJhciUyMHN0eWxlJTIwZnJlc2h8ZW58MHwwfDF8fDE3NTEyNDEwMjV8MA&ixlib=rb-4.1.0&q=80&w=1080
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"kMpbi3TeFE4","slug":"a-plate-of-salad-on-a-black-table-kMpbi3TeFE4","alternative_slugs":{"en":"a-plate-of-salad-on-a-black-table-kMpbi3TeFE4","es":"un...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Dirty Produce: https://images.unsplash.com/photo-1678007698777-c3477535532b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxEaXJ0eSUyMFByb2R1Y2UlMjBicmlnaHQlMjBuYXR1cmFsJTIwbGlnaHRpbmclMjBzYWxhZCUyMGJhciUyMHN0eWxlJTIwZnJlc2h8ZW58MHwwfDF8fDE3NTEyNDEwMjV8MA&ixlib=rb-4.1.0&q=80&w=1080
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"kMpbi3TeFE4","slug":"a-plate-of-salad-on-a-black-table-kMpbi3TeFE4","alternative_slugs":{"en":"a-plate-of-salad-on-a-black-table-kMpbi3TeFE4","es":"un...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for Brominated Vegetable Oil: https://images.unsplash.com/photo-1678007698777-c3477535532b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxCcm9taW5hdGVkJTIwVmVnZXRhYmxlJTIwT2lsJTIwYnJpZ2h0JTIwbmF0dXJhbCUyMGxpZ2h0aW5nJTIwc2FsYWQlMjBiYXIlMjBzdHlsZSUyMGZyZXNofGVufDB8MHwxfHwxNzUxMjQxMDI1fDA&ixlib=rb-4.1.0&q=80&w=1080
+📋 Raw response: {"total":2400,"total_pages":800,"results":[{"id":"595uHQsantQ","slug":"a-white-plate-topped-with-a-salad-on-top-of-a-pink-table-595uHQsantQ","alternative_slugs":{"en":"a-white-plate-topped-with-a-sala...
+📊 Parsed data: { total: 2400, results_length: 3 }
+✅ Found photo for American Parmesan: https://images.unsplash.com/photo-1685079235375-70c0185f91b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzA3MDd8MHwxfHNlYXJjaHwxfHxBbWVyaWNhbiUyMFBhcm1lc2FuJTIwYnJpZ2h0JTIwbmF0dXJhbCUyMGxpZ2h0aW5nJTIwc2FsYWQlMjBiYXIlMjBzdHlsZSUyMGZyZXNofGVufDB8MHwxfHwxNzUxMjQxMDI1fDA&ixlib=rb-4.1.0&q=80&w=1080
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T00:18:03.552Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T00:48:03.568Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T01:18:03.527Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T01:48:03.544Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T02:18:03.550Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T02:48:03.579Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T03:18:03.591Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T03:48:03.602Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T04:18:03.611Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T04:48:03.583Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T05:18:03.608Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T05:48:03.630Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T06:18:03.662Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T06:48:03.676Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T07:18:03.673Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T07:48:03.682Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T08:18:03.718Z
+✅ Auto-sync completed: No new videos found
+🔍 Searching stored transcripts for: what is good for hormonal imbalance?
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T08:48:03.704Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T09:18:03.722Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T10:09:13.146Z
+🆕 Found new video: Master Your SLEEP: Wake Up Alert
+Attempting to fetch transcript for video: iseMJEZvC1E
+Using title + description for iseMJEZvC1E
+✅ Stored 2 token chunks for video: Master Your SLEEP: Wake Up Alert
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T11:29:02.991Z
+🆕 Found new video: Master Your SLEEP: Wake Up Alert
+Video iseMJEZvC1E already stored
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T12:47:29.594Z
+🆕 Found new video: Master Your SLEEP: Wake Up Alert
+Video iseMJEZvC1E already stored
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T14:13:45.315Z
+🆕 Found new video: The Dr. Berg Show LIVE - July 4, 2025
+Attempting to fetch transcript for video: f11yrJ9Ley4
+Using title + description for f11yrJ9Ley4
+✅ Stored 1 token chunks for video: The Dr. Berg Show LIVE - July 4, 2025
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T14:43:45.338Z
+🆕 Found new video: The Dr. Berg Show LIVE - July 4, 2025
+Video f11yrJ9Ley4 already stored
+✅ Auto-processed: The Dr. Berg Show LIVE - July 4, 2025
+🆕 Found new video: How to SLEEP 8 Hours Straight: Wake Up Refreshed
+Video iseMJEZvC1E already stored
+✅ Auto-processed: How to SLEEP 8 Hours Straight: Wake Up Refreshed
+🎯 Auto-sync completed: 2 new videos processed
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T15:13:45.336Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T16:52:22.178Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T18:10:06.002Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T18:52:25.493Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T19:22:25.525Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T19:52:25.575Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T20:22:25.536Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T20:52:25.585Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T21:22:25.589Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T21:52:25.576Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T22:22:25.568Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T22:52:25.604Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T23:22:25.616Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-30T23:52:25.612Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-31T00:22:25.611Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-31T00:52:25.612Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-31T01:22:25.644Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-31T01:52:25.644Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-31T02:22:25.655Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-31T02:52:25.704Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-31T03:22:25.689Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-31T03:52:25.710Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-31T04:22:25.748Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-31T04:52:25.736Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-31T05:22:25.774Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-31T05:52:25.787Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-05-31T06:22:25.790Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-01T07:38:22.945Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-01T09:03:29.840Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-01T09:55:26.230Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-01T11:02:27.842Z
+🆕 Found new video: WHY Do People From India Have Such Bloated Stomachs?
+Attempting to fetch transcript for video: t6h2nK33ev4
+Using title + description for t6h2nK33ev4
+✅ Stored 1 token chunks for video: WHY Do People From India Have Such Bloated Stomachs?
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-01T12:27:39.134Z
+🆕 Found new video: WHY Do People From India Have Such Bloated Stomachs?
+Video t6h2nK33ev4 already stored
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-01T13:50:37.691Z
+🆕 Found new video: WHY Do People From India Have Such Bloated Stomachs?
+Video t6h2nK33ev4 already stored
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-01T15:10:05.884Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-01T16:17:28.469Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-01T17:21:40.311Z
+🆕 Found new video: WHY Do People From India Have Such Bloated Stomachs?
+Video t6h2nK33ev4 already stored
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-01T18:09:09.203Z
+🆕 Found new video: WHY Do People From India Have Such Bloated Stomachs?
+Video t6h2nK33ev4 already stored
+✅ Auto-processed: WHY Do People From India Have Such Bloated Stomachs?
+🎯 Auto-sync completed: 1 new videos processed
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-01T18:39:09.227Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-01T19:09:09.234Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-01T19:39:09.233Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-01T20:09:09.270Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-01T20:39:09.306Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-01T21:09:09.341Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-01T21:39:09.332Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-01T22:09:09.339Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-01T22:39:09.345Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-01T23:09:09.349Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-01T23:39:09.346Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T00:09:09.376Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T00:39:09.388Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T01:09:09.391Z
+Error in auto-sync: Error: Client network socket disconnected before secure TLS connection was established
+    at TLSSocket.onConnectEnd (node:_tls_wrap:1732:19)
+    at TLSSocket.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'ECONNRESET',
+  path: null,
+  host: 'www.googleapis.com',
+  port: 443,
+  localAddress: undefined
+}
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T01:39:09.419Z
+Error in auto-sync: Error: getaddrinfo ENOTFOUND www.googleapis.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'www.googleapis.com'
+}
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T02:09:09.441Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T02:39:09.454Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T03:09:09.416Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T03:39:09.437Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T04:09:09.478Z
+✅ Auto-sync completed: No new videos found
+📺 Serving 10 videos from last week (out of 39 total processed)
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T04:39:09.488Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T05:09:09.491Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T05:39:09.503Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T06:09:09.533Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T06:39:09.513Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T07:09:09.547Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T07:39:09.562Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T08:09:09.584Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T08:39:09.575Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T09:09:09.600Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T09:39:09.609Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T10:09:09.566Z
+🆕 Found new video: What Happens If You Drink Cucumber Lemon Water Daily?
+Attempting to fetch transcript for video: oRZgtMPUcyo
+Using title + description for oRZgtMPUcyo
+✅ Stored 1 token chunks for video: What Happens If You Drink Cucumber Lemon Water Daily?
+⚠️ Summary failed for: What Happens If You Drink Cucumber Lemon Water Daily?
+✅ Auto-processed: What Happens If You Drink Cucumber Lemon Water Daily?
+🎯 Auto-sync completed: 1 new videos processed
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T10:39:09.615Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T11:09:09.641Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T11:39:09.653Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T12:09:09.615Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T12:39:09.635Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T13:09:09.673Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T13:39:09.686Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T14:09:09.696Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T14:39:09.673Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T15:09:09.688Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T15:39:09.714Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T16:09:09.732Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T16:39:09.751Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T17:09:09.757Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T17:39:09.759Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T18:09:09.736Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T18:39:09.785Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T19:09:09.773Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T19:39:09.772Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T20:09:09.814Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T20:39:09.834Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T21:09:09.859Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T21:39:09.862Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T22:09:09.854Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T22:39:09.848Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T23:09:09.885Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-02T23:39:09.902Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-03T00:09:09.912Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-03T00:39:09.903Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-03T01:09:09.900Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-03T01:39:09.912Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-03T02:09:09.908Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-03T02:39:09.963Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-03T03:09:09.948Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-03T03:39:09.958Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-03T04:09:09.977Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-03T04:39:09.978Z
+✅ Auto-sync completed: No new videos found
+🔄 Auto-sync: Checking for new videos...
+🔄 Fetching videos published after: 2025-06-03T05:09:10.012Z
+✅ Auto-sync completed: No new videos found

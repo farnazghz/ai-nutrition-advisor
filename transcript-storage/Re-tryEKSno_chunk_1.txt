@@ -1,0 +1,11 @@
+{
+  "videoId": "Re-tryEKSno",
+  "chunkIndex": 1,
+  "text": "is not a substitute for a medical exam, cure, treatment, diagnosis, prescription, or recommendation. It does not create a doctor-patient relationship between Dr. Berg and you. You should not make any change in your health regimen or diet before first consulting a physician and obtaining a medical exam, diagnosis, and recommendation. Always seek the advice of a physician or other qualified health provider with any questions you may have regarding a medical condition. #health #keto #ketodiet #weightloss #ketolifestyle #intermittentfasting #lowcarb Thanks for watching! I hope this increases your awareness about the benefits of Parmigiano Reggiano cheese. I’ll see you in the next video.",
+  "wordCount": 103,
+  "metadata": {
+    "title": "We've Been Eating Fake Cheese",
+    "publishedAt": "2025-06-09T10:00:46Z",
+    "contentSource": "metadata"
+  }
+}

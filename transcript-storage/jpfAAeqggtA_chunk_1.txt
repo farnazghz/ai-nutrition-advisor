@@ -1,0 +1,11 @@
+{
+  "videoId": "jpfAAeqggtA",
+  "chunkIndex": 1,
+  "text": "from Palmer College of Chiropractic in 1988. His use of “doctor” or “Dr.” in relation to himself solely refers to that degree. Dr. Berg is a licensed chiropractor in Virginia, California, and Louisiana, but he no longer practices chiropractic in any state and does not see patients, so he can focus on educating people as a full-time activity, yet he maintains an active license. This video is for general informational purposes only. It should not be used to self-diagnose, and it is not a substitute for a medical exam, cure, treatment, diagnosis, prescription, or recommendation. It does not create a doctor-patient relationship between Dr. Berg and you. You should not make any change in your health regimen or diet before first consulting a physician and obtaining a medical exam, diagnosis, and recommendation. Always seek the advice of a physician or other qualified health provider with any questions you may have regarding a medical condition. #health #keto #ketodiet #weightloss #ketolifestyle #intermittentfasting #lowcarb Thanks for watching! I hope this increases your awareness about the benefits of colostrum. I’ll see you in the next video.",
+  "wordCount": 182,
+  "metadata": {
+    "title": "The #1 Most POWERFUL Remedy in the World!",
+    "publishedAt": "2025-06-01T10:01:09Z",
+    "contentSource": "metadata"
+  }
+}

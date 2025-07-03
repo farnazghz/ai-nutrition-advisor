@@ -1,0 +1,11 @@
+{
+  "videoId": "fgYcVR7YBBQ",
+  "chunkIndex": 1,
+  "text": "recommendation. It does not create a doctor-patient relationship between Dr. Berg and you. You should not make any change in your health regimen or diet before first consulting a physician and obtaining a medical exam, diagnosis, and recommendation. Always seek the advice of a physician or other qualified health provider with any questions you may have regarding a medical condition. #health #keto #ketodiet #weightloss #ketolifestyle #intermittentfasting #lowcarb Thanks for watching! I hope this explains the truth about grass-fed beef. I’ll see you in the next video.",
+  "wordCount": 86,
+  "metadata": {
+    "title": "This Will Piss You Off!",
+    "publishedAt": "2025-06-07T10:01:03Z",
+    "contentSource": "metadata"
+  }
+}
